@@ -10,8 +10,14 @@
 ## Быстрый старт фронтенда
 
 ```bash
-cd frontend
 npm install
 npm run dev
 ```
 
+Команды из корня проекта:
+
+```bash
+npm run dev
+npm run build
+npm run lint
+```
