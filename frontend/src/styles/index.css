@@ -61,8 +61,8 @@ img {
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 1px solid rgba(229, 223, 191, 0.82);
-  background: rgba(246, 243, 231, 0.9);
+  border-bottom: 1px solid rgba(255, 242, 0, 0.22);
+  background: rgba(22, 22, 21, 0.94);
   backdrop-filter: blur(18px);
 }
 
@@ -130,20 +130,21 @@ img {
   align-items: center;
   gap: 8px;
   padding: 6px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 242, 0, 0.18);
   border-radius: 999px;
-  background: rgba(255, 253, 247, 0.72);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .header__nav a {
   border-radius: 999px;
-  color: var(--text);
+  color: rgba(255, 253, 243, 0.84);
   font-size: 14px;
   font-weight: 700;
   padding: 9px 14px;
 }
 
 .header__nav a:hover {
+  color: var(--green-950);
   background: rgba(255, 242, 0, 0.28);
 }
 
@@ -166,9 +167,10 @@ img {
 
 .icon-link {
   padding: 0 16px;
-  border-color: var(--line);
-  background: var(--paper);
-  color: var(--green-900);
+  border-color: rgba(255, 242, 0, 0.36);
+  background: var(--green-500);
+  color: var(--green-950);
+  box-shadow: 0 12px 28px rgba(255, 242, 0, 0.14);
 }
 
 .button {
@@ -204,9 +206,9 @@ img {
   overflow: hidden;
   padding: 76px 0 36px;
   background:
-    radial-gradient(circle at 18% 22%, rgba(255, 242, 0, 0.28), transparent 32%),
-    radial-gradient(circle at 88% 12%, rgba(215, 25, 32, 0.13), transparent 30%),
-    linear-gradient(180deg, #f6f3e7 0%, #eee8cf 100%);
+    radial-gradient(circle at 18% 22%, rgba(255, 242, 0, 0.18), transparent 32%),
+    radial-gradient(circle at 88% 12%, rgba(215, 25, 32, 0.16), transparent 30%),
+    linear-gradient(180deg, #201f1c 0%, #f0ead2 58%, #eee8cf 100%);
 }
 
 .hero-section::after {
@@ -230,6 +232,18 @@ img {
 .hero-copy {
   display: grid;
   gap: 24px;
+}
+
+.hero-copy .eyebrow {
+  color: var(--green-500);
+}
+
+.hero-copy h1 {
+  color: var(--paper);
+}
+
+.hero-copy p {
+  color: rgba(255, 253, 243, 0.78);
 }
 
 .eyebrow,
@@ -284,7 +298,7 @@ h3 {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--green-900);
+  color: rgba(255, 253, 243, 0.88);
   font-weight: 750;
 }
 
@@ -616,18 +630,73 @@ h3 {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.work-grid--gallery {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.work-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: -12px 0 20px;
+}
+
+.work-meta span {
+  border: 1px solid rgba(255, 242, 0, 0.22);
+  border-radius: 999px;
+  color: var(--green-300);
+  font-size: 13px;
+  font-weight: 900;
+  padding: 7px 12px;
+}
+
+.brand-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.brand-filter__item {
+  min-height: 36px;
+  border: 1px solid rgba(255, 242, 0, 0.22);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 253, 243, 0.78);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 850;
+  padding: 0 13px;
+}
+
+.brand-filter__item:hover,
+.brand-filter__item.is-active {
+  border-color: var(--green-500);
+  background: var(--green-500);
+  color: var(--green-950);
+}
+
 .work-card {
   overflow: hidden;
-  min-height: 360px;
+  display: block;
+  min-height: 240px;
   border: 1px solid rgba(255, 242, 0, 0.22);
   background:
     linear-gradient(135deg, rgba(215, 25, 32, 0.2), transparent),
     rgba(255, 255, 255, 0.05);
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.work-card:hover {
+  border-color: rgba(255, 242, 0, 0.64);
+  transform: translateY(-3px);
 }
 
 .work-card img {
   width: 100%;
-  height: 210px;
+  height: 240px;
   object-fit: cover;
 }
 
@@ -645,6 +714,13 @@ h3 {
 .work-card__body p {
   margin-top: 16px;
   color: rgba(255, 255, 255, 0.68);
+}
+
+.button--gallery {
+  margin: 28px auto 0;
+  border-color: rgba(255, 242, 0, 0.32);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--green-500);
 }
 
 .contacts-section {
@@ -775,7 +851,8 @@ h3 {
   .stats-row,
   .services-grid,
   .benefits-strip,
-  .brands-grid {
+  .brands-grid,
+  .work-grid--gallery {
     grid-template-columns: repeat(2, 1fr);
   }
 

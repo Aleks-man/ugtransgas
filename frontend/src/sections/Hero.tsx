@@ -1,6 +1,6 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
-import heroImage from "../assets/hero-workshop.png";
+import heroImage from "../assets/hero-workshop-brand.png";
 import { accents, stats } from "../data/site";
 
 export function Hero() {
