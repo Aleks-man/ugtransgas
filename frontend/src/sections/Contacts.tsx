@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone, Timer } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Navigation, Phone, Send, Timer } from "lucide-react";
 import { ContactForm } from "../components/ContactForm";
 import { contactInfo } from "../data/site";
 
@@ -30,6 +30,20 @@ export function Contacts() {
               <Timer size={20} />
               {contactInfo.schedule}
             </span>
+          </div>
+          <div className="messenger-actions">
+            <a className="button button--primary" href={contactInfo.route} target="_blank" rel="noreferrer">
+              <Navigation size={18} />
+              Построить маршрут
+            </a>
+            <a className="button button--ghost" href={contactInfo.whatsapp} target="_blank" rel="noreferrer">
+              <MessageCircle size={18} />
+              WhatsApp
+            </a>
+            <a className="button button--ghost" href={contactInfo.telegram} target="_blank" rel="noreferrer">
+              <Send size={18} />
+              Telegram
+            </a>
           </div>
         </div>
         <ContactForm />

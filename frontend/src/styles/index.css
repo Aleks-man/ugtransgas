@@ -83,7 +83,7 @@ img {
 
 .logo__mark {
   display: grid;
-  width: 46px;
+  width: 58px;
   height: 46px;
   place-items: center;
   border-radius: 8px;
@@ -91,6 +91,17 @@ img {
   color: white;
   font-size: 14px;
   font-weight: 800;
+}
+
+.logo__mark--image {
+  overflow: hidden;
+  background: white;
+}
+
+.logo__mark--image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .logo__text {
@@ -600,22 +611,32 @@ h3 {
 }
 
 .work-card {
-  min-height: 260px;
-  padding: 24px;
+  overflow: hidden;
+  min-height: 360px;
   border: 1px solid rgba(157, 219, 183, 0.2);
   background:
     linear-gradient(135deg, rgba(55, 162, 103, 0.18), transparent),
     rgba(255, 255, 255, 0.05);
 }
 
-.work-card span {
+.work-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.work-card__body {
+  padding: 22px;
+}
+
+.work-card__body span {
   display: inline-flex;
-  margin-bottom: 62px;
+  margin-bottom: 18px;
   color: var(--lime);
   font-weight: 900;
 }
 
-.work-card p {
+.work-card__body p {
   margin-top: 16px;
   color: rgba(255, 255, 255, 0.68);
 }
@@ -655,6 +676,13 @@ h3 {
 
 .contact-list svg {
   color: var(--green-500);
+}
+
+.messenger-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
 }
 
 .lead-form {

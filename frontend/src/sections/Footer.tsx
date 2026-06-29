@@ -5,9 +5,8 @@ export function Footer() {
     <footer className="footer">
       <div className="container footer__inner">
         <Logo />
-        <p>Концепт современного сайта-визитки для ЮгТрансГаз.</p>
+        <p>Установка, обслуживание и оформление газобаллонного оборудования в Республике Крым.</p>
       </div>
     </footer>
   );
 }
-

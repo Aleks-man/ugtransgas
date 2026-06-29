@@ -26,6 +26,10 @@ export const contactInfo = {
   fullAddress:
     "297570, Республика Крым, Симферопольский район, с. Чистенькое, Севастопольское шоссе, зд. 667, территория метановой заправки АГНКС «Черноморнефтегаз»",
   schedule: "ПН-СБ: 09:00-13:00, 14:00-18:00",
+  whatsapp: "https://api.whatsapp.com/send?phone=+79788907680",
+  telegram: "http://t.me/+79788907680",
+  route:
+    "https://yandex.ru/maps/?ll=34.050033%2C44.888887&mode=routes&rtext=~44.889457%2C34.048128&rtt=auto&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D1060228721&utm_source=share&z=18.39",
 };
 
 export const stats = [
@@ -106,9 +110,10 @@ export const workSteps = [
 ];
 
 export const gallery = [
-  "Скрытая установка баллона",
-  "Чистая прокладка магистралей",
-  "Настройка топливной карты",
+  "Монтаж ГБО на легковой автомобиль",
+  "Диагностика и настройка оборудования",
+  "Работа с газовой магистралью",
+  "Проверка узлов после установки",
 ];
 
 export const accents = [
