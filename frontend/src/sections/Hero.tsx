@@ -13,7 +13,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="eyebrow">Лицензированный сервисный центр ГБО в Крыму</span>
+          <span className="eyebrow">СТО ТрансГаз в Республике Крым</span>
           <h1>Установка газового оборудования с инженерным подходом</h1>
           <p>
             Метан, пропан, аттестация баллонов, диагностика и оформление ГБО.
