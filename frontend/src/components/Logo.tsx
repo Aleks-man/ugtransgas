@@ -1,4 +1,4 @@
-import logoSrc from "../assets/site/logo.png";
+import logoSrc from "../assets/site/logo-spaced.png";
 
 export function Logo() {
   return (
