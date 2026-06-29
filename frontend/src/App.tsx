@@ -1,4 +1,5 @@
 import { Header } from "./components/Header";
+import { Brands } from "./sections/Brands";
 import { Contacts } from "./sections/Contacts";
 import { Footer } from "./sections/Footer";
 import { Hero } from "./sections/Hero";
@@ -15,6 +16,7 @@ function App() {
       <main>
         <Hero />
         <Services />
+        <Brands />
         <Pricing />
         <Process />
         <Work />
@@ -26,4 +28,3 @@ function App() {
 }
 
 export default App;
-

@@ -13,11 +13,11 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="eyebrow">Сервис ГБО в Краснодарском крае</span>
+          <span className="eyebrow">Лицензированный сервисный центр ГБО в Крыму</span>
           <h1>Установка газового оборудования с инженерным подходом</h1>
           <p>
-            Обновленная цифровая витрина для ЮгТрансГаз: понятные услуги,
-            сильная визуальная подача и быстрый путь от интереса до заявки.
+            Метан, пропан, аттестация баллонов, диагностика и оформление ГБО.
+            Сайт сразу показывает опыт сервиса и помогает записаться на осмотр.
           </p>
           <div className="hero-actions">
             <a className="button button--primary" href="#contacts">
@@ -30,7 +30,7 @@ export function Hero() {
           </div>
           <div className="hero-trust">
             <CheckCircle2 size={18} />
-            <span>Подбор комплекта, монтаж, настройка и сопровождение в одном месте</span>
+            <span>Бесплатный технический осмотр перед подбором оборудования</span>
           </div>
         </motion.div>
 
@@ -43,7 +43,7 @@ export function Hero() {
           <img src={heroImage} alt="Современный сервис установки газового оборудования" />
           <div className="hero-card">
             <strong>До 45%</strong>
-            <span>экономии на топливе при правильной настройке</span>
+            <span>экономии на топливе при грамотном подборе и настройке ГБО</span>
           </div>
         </motion.div>
       </div>
@@ -68,4 +68,3 @@ export function Hero() {
     </section>
   );
 }
-

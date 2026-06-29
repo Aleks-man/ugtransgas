@@ -391,6 +391,46 @@ h3 {
   color: var(--green-300);
 }
 
+.brands-section {
+  padding: 32px 0 72px;
+}
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 36px;
+  align-items: center;
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.brands-grid h2 {
+  max-width: 520px;
+  margin-top: 10px;
+  font-size: clamp(26px, 3vw, 38px);
+}
+
+.brand-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.brand-cloud span {
+  min-width: 92px;
+  border: 1px solid rgba(55, 162, 103, 0.2);
+  border-radius: 8px;
+  background: var(--mint);
+  color: var(--green-900);
+  font-size: 14px;
+  font-weight: 900;
+  padding: 11px 14px;
+  text-align: center;
+}
+
 .section-header {
   display: grid;
   max-width: 780px;
@@ -700,8 +740,17 @@ h3 {
 
   .stats-row,
   .services-grid,
-  .benefits-strip {
+  .benefits-strip,
+  .brands-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brands-grid {
+    align-items: start;
+  }
+
+  .brand-cloud {
+    justify-content: flex-start;
   }
 }
 
@@ -748,8 +797,13 @@ h3 {
   .services-grid,
   .pricing-grid,
   .work-grid,
-  .benefits-strip {
+  .benefits-strip,
+  .brands-grid {
     grid-template-columns: 1fr;
+  }
+
+  .brands-section {
+    padding: 0 0 64px;
   }
 
   .section {
@@ -769,4 +823,3 @@ h3 {
     flex-direction: column;
   }
 }
-

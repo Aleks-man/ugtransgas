@@ -1,5 +1,6 @@
-import { MapPin, Phone, Timer } from "lucide-react";
+import { Mail, MapPin, Phone, Timer } from "lucide-react";
 import { ContactForm } from "../components/ContactForm";
+import { contactInfo } from "../data/site";
 
 export function Contacts() {
   return (
@@ -7,24 +8,27 @@ export function Contacts() {
       <div className="container contacts-grid">
         <div className="contact-copy">
           <span className="eyebrow">Заявка</span>
-          <h2>Форма, которая выглядит как часть сервиса, а не как придаток сайта</h2>
+          <h2>Запишитесь на бесплатный технический осмотр</h2>
           <p>
-            Ее можно подключить к Express API, Prisma и PostgreSQL, когда появится
-            задача хранить заявки. Для первого релиза достаточно отправки в
-            Telegram, почту или CRM.
+            Специалист проверит автомобиль, подскажет подходящий комплект и
+            рассчитает стоимость установки метанового или пропанового оборудования.
           </p>
           <div className="contact-list">
-            <a href="tel:+78000000000">
+            <a href={contactInfo.phoneHref}>
               <Phone size={20} />
-              +7 800 000-00-00
+              {contactInfo.phone}
+            </a>
+            <a href={`mailto:${contactInfo.email}`}>
+              <Mail size={20} />
+              {contactInfo.email}
             </a>
             <span>
               <MapPin size={20} />
-              Краснодарский край
+              {contactInfo.address}
             </span>
             <span>
               <Timer size={20} />
-              Ежедневно, по предварительной записи
+              {contactInfo.schedule}
             </span>
           </div>
         </div>
@@ -33,4 +37,3 @@ export function Contacts() {
     </section>
   );
 }
-

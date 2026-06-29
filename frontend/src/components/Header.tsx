@@ -1,5 +1,5 @@
 import { Phone } from "lucide-react";
-import { navItems } from "../data/site";
+import { contactInfo, navItems } from "../data/site";
 import { Logo } from "./Logo";
 
 export function Header() {
@@ -14,12 +14,11 @@ export function Header() {
             </a>
           ))}
         </nav>
-        <a className="icon-link" href="tel:+78000000000" aria-label="Позвонить">
+        <a className="icon-link" href={contactInfo.phoneHref} aria-label="Позвонить">
           <Phone size={18} />
-          <span>Позвонить</span>
+          <span>{contactInfo.phone}</span>
         </a>
       </div>
     </header>
   );
 }
-
