@@ -68,7 +68,7 @@ img {
 
 .header__inner {
   display: flex;
-  min-height: 76px;
+  min-height: 96px;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
@@ -77,31 +77,26 @@ img {
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 0;
   min-width: max-content;
 }
 
 .logo__mark {
-  display: grid;
-  width: 136px;
-  height: 54px;
-  place-items: center;
-  border-radius: 8px;
-  background: var(--green-950);
-  color: white;
-  font-size: 14px;
-  font-weight: 800;
+  display: inline-flex;
+  width: 116px;
+  height: 87px;
+  flex: 0 0 116px;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
-.logo__mark--image {
-  overflow: hidden;
-  border: 1px solid rgba(255, 242, 0, 0.35);
-  background: var(--green-950);
-}
-
-.logo__mark--image img {
-  width: 92%;
-  height: 92%;
+.logo__mark img {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 
@@ -119,6 +114,15 @@ img {
 .logo__text span {
   color: var(--muted);
   font-size: 12px;
+}
+
+.logo__text--fallback {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 .header__nav {
@@ -794,7 +798,7 @@ h3 {
   }
 
   .header__inner {
-    min-height: 68px;
+    min-height: 78px;
   }
 
   .icon-link span {
@@ -803,6 +807,12 @@ h3 {
 
   .logo__text span {
     display: none;
+  }
+
+  .logo__mark {
+    width: 88px;
+    height: 66px;
+    flex-basis: 88px;
   }
 
   .hero-section {
