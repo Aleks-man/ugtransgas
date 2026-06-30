@@ -204,20 +204,29 @@ img {
 .hero-section {
   position: relative;
   overflow: hidden;
-  padding: 76px 0 36px;
+  padding: 58px 0 34px;
   background:
-    radial-gradient(circle at 18% 22%, rgba(255, 242, 0, 0.18), transparent 32%),
-    radial-gradient(circle at 88% 12%, rgba(215, 25, 32, 0.16), transparent 30%),
-    linear-gradient(180deg, #201f1c 0%, #f0ead2 58%, #eee8cf 100%);
+    radial-gradient(circle at 78% 16%, rgba(255, 242, 0, 0.22), transparent 32%),
+    radial-gradient(circle at 16% 78%, rgba(215, 25, 32, 0.1), transparent 30%),
+    linear-gradient(180deg, #36342e 0%, #eee8cf 66%, #f6f3e7 100%);
 }
 
 .hero-section::after {
   content: "";
   position: absolute;
   inset: auto 0 0;
-  height: 120px;
+  height: 190px;
   pointer-events: none;
-  background: linear-gradient(180deg, transparent, rgba(246, 243, 231, 0.94));
+  background: linear-gradient(180deg, transparent, rgba(246, 243, 231, 0.72) 62%, #f6f3e7);
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, rgba(255, 253, 243, 0.18), transparent 48%);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 78%);
 }
 
 .hero-grid {
@@ -225,7 +234,7 @@ img {
   z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
-  align-items: center;
+  align-items: start;
   gap: 56px;
 }
 
@@ -239,11 +248,12 @@ img {
 }
 
 .hero-copy h1 {
-  color: var(--paper);
+  color: #fffdf3;
+  text-shadow: 0 16px 46px rgba(0, 0, 0, 0.24);
 }
 
 .hero-copy p {
-  color: rgba(255, 253, 243, 0.78);
+  color: rgba(255, 253, 243, 0.86);
 }
 
 .eyebrow,
@@ -298,8 +308,16 @@ h3 {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: rgba(255, 253, 243, 0.88);
+  width: fit-content;
+  max-width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 242, 0, 0.26);
+  border-radius: 8px;
+  background: rgba(9, 9, 8, 0.72);
+  color: rgba(255, 253, 243, 0.94);
   font-weight: 750;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(12px);
 }
 
 .hero-trust svg {
@@ -309,10 +327,13 @@ h3 {
 
 .hero-visual {
   position: relative;
-  min-height: 560px;
+  min-height: 500px;
   overflow: hidden;
   border-radius: 8px;
-  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 253, 243, 0.36);
+  margin-top: 0;
+  transform: translateY(-14px);
+  box-shadow: 0 34px 90px rgba(22, 22, 21, 0.28);
   isolation: isolate;
 }
 
@@ -321,16 +342,18 @@ h3 {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(22, 22, 21, 0.62), transparent 48%),
-    linear-gradient(0deg, rgba(215, 25, 32, 0.18), transparent 42%);
+    linear-gradient(90deg, rgba(22, 22, 21, 0.54), transparent 46%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.36), transparent 36%),
+    linear-gradient(180deg, rgba(255, 242, 0, 0.08), transparent 34%);
   z-index: 1;
 }
 
 .hero-visual img {
   width: 100%;
   height: 100%;
-  min-height: 560px;
+  min-height: 500px;
   object-fit: cover;
+  object-position: 68% 22%;
 }
 
 .hero-card {
@@ -421,7 +444,12 @@ h3 {
 }
 
 .section--dark {
-  background: var(--green-950);
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(255, 242, 0, 0.12), transparent 30%),
+    radial-gradient(circle at 92% 72%, rgba(215, 25, 32, 0.1), transparent 28%),
+    linear-gradient(180deg, #161615 0%, #26231d 50%, #161615 100%);
   color: white;
 }
 
@@ -438,7 +466,7 @@ h3 {
 .brands-section {
   position: relative;
   overflow: hidden;
-  padding: 56px 0 78px;
+  padding: 44px 0 66px;
   background:
     linear-gradient(180deg, #f6f3e7 0%, rgba(246, 243, 231, 0.5) 42%, #eee8cf 100%),
     linear-gradient(90deg, rgba(22, 22, 21, 0.08), transparent 42%),
@@ -447,10 +475,10 @@ h3 {
 
 .brands-grid {
   display: grid;
-  grid-template-columns: 0.62fr 1.38fr;
-  gap: 36px;
+  grid-template-columns: 0.52fr 1.48fr;
+  gap: 28px;
   align-items: center;
-  padding: 30px;
+  padding: 24px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 253, 243, 0.88);
@@ -461,22 +489,22 @@ h3 {
 .brands-grid h2 {
   max-width: 520px;
   margin-top: 10px;
-  font-size: clamp(26px, 3vw, 38px);
+  font-size: clamp(24px, 2.7vw, 34px);
 }
 
 .brand-cloud {
   display: grid;
-  grid-template-columns: repeat(5, minmax(92px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(7, minmax(76px, 1fr));
+  gap: 8px;
 }
 
 .brand-logo {
   display: grid;
-  min-height: 112px;
-  grid-template-rows: 72px auto;
+  min-height: 86px;
+  grid-template-rows: 52px auto;
   place-items: center;
-  gap: 8px;
-  padding: 13px 10px 12px;
+  gap: 6px;
+  padding: 9px 8px 8px;
   border: 1px solid rgba(22, 22, 21, 0.1);
   border-radius: 8px;
   background:
@@ -484,7 +512,7 @@ h3 {
     rgba(255, 253, 243, 0.9);
   color: var(--green-900);
   text-align: center;
-  box-shadow: 0 12px 30px rgba(22, 22, 21, 0.08);
+  box-shadow: 0 10px 22px rgba(22, 22, 21, 0.07);
   transition:
     border-color 180ms ease,
     color 180ms ease,
@@ -499,38 +527,38 @@ h3 {
 }
 
 .brand-logo__image {
-  width: min(108px, 100%);
-  height: 62px;
+  width: min(82px, 100%);
+  height: 46px;
   object-fit: contain;
   align-self: center;
 }
 
 .brand-logo--chrysler .brand-logo__image,
 .brand-logo--dodge .brand-logo__image {
-  width: min(132px, 100%);
-  height: 58px;
+  width: min(104px, 100%);
+  height: 42px;
 }
 
 .brand-logo--mazda .brand-logo__image,
 .brand-logo--peugeot .brand-logo__image {
-  width: 102px;
-  height: 62px;
+  width: 78px;
+  height: 46px;
 }
 
 .brand-logo--toyota .brand-logo__image,
 .brand-logo--nissan .brand-logo__image {
-  width: 104px;
-  height: 58px;
+  width: 80px;
+  height: 42px;
 }
 
 .brand-logo--ssangyong .brand-logo__image {
-  width: min(150px, 100%);
-  height: 68px;
+  width: min(116px, 100%);
+  height: 48px;
 }
 
 .brand-logo__label {
   color: var(--ink-muted);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 900;
   line-height: 1;
   text-align: center;
@@ -798,13 +826,14 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin: -12px 0 20px;
+  margin: -10px 0 24px;
 }
 
 .work-meta span {
-  border: 1px solid rgba(255, 242, 0, 0.22);
+  border: 1px solid rgba(255, 242, 0, 0.2);
   border-radius: 999px;
-  color: var(--green-300);
+  background: rgba(255, 253, 243, 0.06);
+  color: rgba(255, 253, 243, 0.84);
   font-size: 13px;
   font-weight: 900;
   padding: 7px 12px;
@@ -978,7 +1007,9 @@ h3 {
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(180deg, #161615 0%, #23211c 52%, #161615 100%),
+    linear-gradient(90deg, rgba(22, 22, 21, 0.97) 0%, rgba(22, 22, 21, 0.9) 38%, rgba(22, 22, 21, 0.58) 66%, rgba(22, 22, 21, 0.28) 100%),
+    linear-gradient(180deg, rgba(22, 22, 21, 0.74) 0%, rgba(35, 33, 28, 0.28) 48%, rgba(22, 22, 21, 0.82) 100%),
+    url("../assets/engineering-workshop-bg.jpg") right center / auto 118% no-repeat,
     #161615;
   color: var(--paper);
 }
@@ -989,8 +1020,9 @@ h3 {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(255, 242, 0, 0.09), transparent 24%, transparent 76%, rgba(215, 25, 32, 0.08)),
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 120px);
+    radial-gradient(circle at 76% 18%, rgba(255, 242, 0, 0.18), transparent 30%),
+    radial-gradient(circle at 92% 78%, rgba(215, 25, 32, 0.15), transparent 34%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.24));
 }
 
 .engineering-grid {
@@ -1056,7 +1088,7 @@ h3 {
 }
 
 .estimate-section {
-  padding: 0 0 92px;
+  padding: 52px 0 92px;
   background: #161615;
 }
 
@@ -1133,12 +1165,18 @@ h3 {
 .showcase-grid {
   display: grid;
   grid-template-columns: 1.18fr 0.82fr 0.82fr;
-  gap: 14px;
+  grid-auto-rows: 238px;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid rgba(255, 253, 243, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 253, 243, 0.04);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.32);
 }
 
 .showcase-card {
   position: relative;
-  min-height: 250px;
+  min-height: 0;
   overflow: hidden;
   border: 1px solid rgba(255, 253, 243, 0.12);
   border-radius: 8px;
@@ -1147,15 +1185,17 @@ h3 {
 
 .showcase-card--lead {
   grid-row: span 2;
-  min-height: 516px;
 }
 
 .showcase-card img {
+  position: absolute;
+  inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
-  min-height: inherit;
   object-fit: cover;
-  filter: saturate(0.92) contrast(1.04);
+  object-position: center;
+  filter: saturate(0.98) contrast(1.08);
   transition: transform 240ms ease;
 }
 
@@ -1163,7 +1203,9 @@ h3 {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.62));
+  background:
+    linear-gradient(180deg, transparent 38%, rgba(0, 0, 0, 0.72)),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.22), transparent 48%);
 }
 
 .showcase-card span {
@@ -1190,7 +1232,9 @@ h3 {
   padding: 22px 24px;
   border: 1px solid rgba(255, 253, 243, 0.12);
   border-radius: 8px;
-  background: rgba(255, 253, 243, 0.06);
+  background:
+    linear-gradient(135deg, rgba(255, 242, 0, 0.08), transparent 34%),
+    rgba(255, 253, 243, 0.06);
 }
 
 .work-archive-note p {
@@ -1236,10 +1280,13 @@ h3 {
 
   .hero-visual {
     min-height: 420px;
+    margin-top: 0;
+    transform: none;
   }
 
   .hero-visual img {
     min-height: 420px;
+    object-position: 70% 16%;
   }
 
   .stats-row,
@@ -1257,7 +1304,6 @@ h3 {
 
   .showcase-card--lead {
     grid-row: span 1;
-    min-height: 320px;
   }
 
   .brands-grid {
@@ -1265,7 +1311,7 @@ h3 {
   }
 
   .brand-cloud {
-    grid-template-columns: repeat(3, minmax(90px, 1fr));
+    grid-template-columns: repeat(4, minmax(82px, 1fr));
   }
 }
 
@@ -1301,7 +1347,16 @@ h3 {
   }
 
   h1 {
-    font-size: 42px;
+    font-size: 40px;
+  }
+
+  .hero-visual,
+  .hero-visual img {
+    min-height: 360px;
+  }
+
+  .hero-trust {
+    align-items: flex-start;
   }
 
   .hero-copy p,
@@ -1357,6 +1412,14 @@ h3 {
 
   .brand-cloud {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .brand-logo {
+    min-height: 82px;
+  }
+
+  .brand-logo__image {
+    height: 42px;
   }
 
   .equipment-band {

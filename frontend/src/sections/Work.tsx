@@ -8,7 +8,16 @@ type WorkImage = {
   original: string;
 };
 
-const featuredBrands = ["toyota", "lexus", "mercedes", "cadillac", "kia", "uaz"];
+const featuredWorkSources = [
+  "/works-gallery/hyundai/hyundai-034.jpg",
+  "/works-gallery/geely/geely-006.jpg",
+  "/works-gallery/infiniti/infiniti-012.jpg",
+  "/works-gallery/kia/kia-023.jpg",
+  "/works-gallery/ford/ford-013.jpg",
+  "/works-gallery/chevrolet/chevrolet-014.jpg",
+  "/works-gallery/hyundai/hyundai-040.jpg",
+  "/works-gallery/kia/kia-026.jpg",
+];
 
 export function Work() {
   const [images, setImages] = useState<WorkImage[]>([]);
@@ -20,21 +29,13 @@ export function Work() {
       .catch(() => setImages([]));
   }, []);
 
-  const brands = useMemo(
-    () =>
-      Array.from(new Map(images.map((image) => [image.slug, image.brand])).entries()).map(
-        ([slug, brand]) => ({ slug, brand }),
-      ),
-    [images],
-  );
-
   const featuredImages = useMemo(() => {
     if (!images.length) {
       return [];
     }
 
-    const selected = featuredBrands
-      .map((slug) => images.find((image) => image.slug === slug))
+    const selected = featuredWorkSources
+      .map((src) => images.find((image) => image.src === src))
       .filter((image): image is WorkImage => Boolean(image));
 
     return selected.length >= 4 ? selected : images.slice(0, 6);
@@ -45,13 +46,13 @@ export function Work() {
       <div className="container">
         <SectionHeader
           eyebrow="Работы"
-          title="Избранные установки: аккуратный монтаж, чистая компоновка, понятный результат"
-          text="Показываем не весь архив подряд, а сильные примеры работ. Полная галерея может жить отдельной страницей или подгружаться по маркам."
+          title="Каждая установка - аккуратное исполнение и продуманная компоновка"
+          text="В галерее представлены реальные примеры монтажа: подкапотное размещение оборудования, установка баллонов и заправочных узлов на разных автомобилях. Чистый монтаж, соблюдение требований безопасности и удобство дальнейшего обслуживания - основа каждого проекта."
         />
         <div className="work-meta">
-          <span>{images.length || 617} фото в архиве</span>
-          <span>{brands.length || 27} марок автомобилей</span>
-          <span>на лендинге только отобранные работы</span>
+          <span>более 600 фотографий выполненных работ</span>
+          <span>22 марки автомобилей</span>
+          <span>примеры монтажа, настройки и обслуживания</span>
         </div>
 
         <div className="showcase-grid">
@@ -70,7 +71,7 @@ export function Work() {
         </div>
 
         <div className="work-archive-note">
-          <p>Полный фотоархив лучше вынести отдельно: так лендинг останется быстрым, а клиент увидит лучшие работы сразу.</p>
+          <p>Подберем примеры установок на похожий автомобиль и покажем варианты размещения оборудования до записи.</p>
           <a className="button button--ghost button--dark" href="#contacts">
             Запросить примеры по моей марке
           </a>
