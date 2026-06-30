@@ -58,9 +58,9 @@ export function GalleryPage() {
             </p>
           </div>
           <div className="page-hero__panel">
-            <span>более 600 фотографий</span>
-            <span>22 марки на сайте</span>
-            <span>ленивая загрузка изображений</span>
+            <span>более 600 фотографий работ</span>
+            <span>22 марки автомобилей</span>
+            <span>монтаж, настройка и обслуживание</span>
           </div>
         </div>
       </section>
@@ -70,7 +70,7 @@ export function GalleryPage() {
           <SectionHeader
             eyebrow="Марки"
             title="Выберите автомобиль"
-            text="Фотографии подгружаются порциями, чтобы страница оставалась быстрой даже с большим архивом работ."
+            text="В галерее собраны реальные установки на легковых и коммерческих автомобилях: от размещения баллона до аккуратной компоновки под капотом."
           />
 
           <div className="gallery-layout">
@@ -90,9 +90,7 @@ export function GalleryPage() {
             <div className="gallery-results">
               <div className="gallery-results__head">
                 <h2>{brands.find((brand) => brand.slug === activeSlug)?.brand ?? "Работы"}</h2>
-                <span>
-                  {activeImages.length} фото
-                </span>
+                <span>{activeImages.length} фото</span>
               </div>
 
               <div className="gallery-grid">

@@ -1,0 +1,55 @@
+﻿.service-detail-section {
+  background:
+    linear-gradient(180deg, #f6f3e7 0%, rgba(246, 243, 231, 0.74) 100%),
+    url("../../assets/section-equipment-detail.jpg") center / cover;
+}
+
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.service-detail-card {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  min-height: 360px;
+  padding: 24px;
+  border: 1px solid rgba(22, 22, 21, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 253, 243, 0.9);
+  box-shadow: 0 18px 50px rgba(22, 22, 21, 0.08);
+}
+
+.service-detail-card h3 {
+  color: var(--green-950);
+  font-size: 24px;
+}
+
+.service-detail-card p {
+  color: var(--muted);
+}
+
+.service-detail-card ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-detail-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--text);
+  font-weight: 800;
+}
+
+.service-detail-card svg {
+  flex: 0 0 auto;
+  color: var(--green-800);
+}
+
+

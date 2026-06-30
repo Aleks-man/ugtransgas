@@ -1,0 +1,38 @@
+﻿#services {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, #f6f3e7 0%, rgba(246, 243, 231, 0.7) 46%, #f6f3e7 100%),
+    url("../../assets/section-workshop-bg.jpg") center / cover;
+}
+
+.section--muted {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, #eee8cf 0%, rgba(238, 232, 207, 0.5) 18%, rgba(238, 232, 207, 0.52) 82%, #f6f3e7 100%),
+    linear-gradient(90deg, rgba(238, 232, 207, 0.68), rgba(238, 232, 207, 0.38)),
+    url("../../assets/section-equipment-detail.jpg") center / cover;
+}
+
+.section--dark {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(255, 242, 0, 0.12), transparent 30%),
+    radial-gradient(circle at 92% 72%, rgba(215, 25, 32, 0.1), transparent 28%),
+    linear-gradient(180deg, #161615 0%, #26231d 50%, #161615 100%);
+  color: white;
+}
+
+.section--dark h2,
+.section--dark h3 {
+  color: white;
+}
+
+.section--dark .section-header p,
+.section--dark .section-header span {
+  color: var(--green-300);
+}
+
+

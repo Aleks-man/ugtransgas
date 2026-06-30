@@ -1,0 +1,63 @@
+﻿.section {
+  padding: 92px 0;
+}
+
+.site-path-section {
+  position: relative;
+  z-index: 1;
+  margin-top: -28px;
+  padding-bottom: 42px;
+  background: #f6f3e7;
+}
+
+.site-path {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.site-path-card {
+  display: grid;
+  grid-template-columns: 44px 1fr 24px;
+  gap: 16px;
+  align-items: center;
+  min-height: 144px;
+  padding: 22px;
+  border: 1px solid rgba(22, 22, 21, 0.1);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 242, 0, 0.16), transparent 36%),
+    rgba(255, 253, 243, 0.94);
+  box-shadow: 0 18px 50px rgba(22, 22, 21, 0.1);
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.site-path-card:hover {
+  border-color: rgba(215, 25, 32, 0.28);
+  box-shadow: 0 24px 70px rgba(22, 22, 21, 0.16);
+  transform: translateY(-3px);
+}
+
+.site-path-card > svg:first-child {
+  color: var(--green-800);
+}
+
+.site-path-card > svg:last-child {
+  color: var(--green-950);
+}
+
+.site-path-card h3 {
+  color: var(--green-950);
+  font-size: 21px;
+}
+
+.site-path-card p {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+

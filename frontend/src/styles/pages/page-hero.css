@@ -1,0 +1,73 @@
+﻿.page-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 78px 0 72px;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(255, 242, 0, 0.18), transparent 30%),
+    radial-gradient(circle at 10% 86%, rgba(215, 25, 32, 0.12), transparent 28%),
+    linear-gradient(180deg, #24221d 0%, #161615 100%);
+  color: var(--paper);
+}
+
+.page-hero--services {
+  background:
+    linear-gradient(90deg, rgba(22, 22, 21, 0.92), rgba(22, 22, 21, 0.58)),
+    url("../../assets/engineering-workshop-bg.jpg") right center / cover no-repeat,
+    #161615;
+}
+
+.page-hero--gallery {
+  background:
+    linear-gradient(90deg, rgba(22, 22, 21, 0.94), rgba(22, 22, 21, 0.62)),
+    url("../../assets/section-workshop-bg.jpg") center / cover no-repeat,
+    #161615;
+}
+
+.page-hero--contacts {
+  background:
+    linear-gradient(90deg, rgba(22, 22, 21, 0.92), rgba(22, 22, 21, 0.58)),
+    url("../../assets/section-equipment-detail.jpg") center / cover no-repeat,
+    #161615;
+}
+
+.page-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.62fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.page-hero h1 {
+  max-width: 780px;
+  color: var(--paper);
+  font-size: clamp(44px, 6vw, 78px);
+  line-height: 0.95;
+}
+
+.page-hero p {
+  max-width: 720px;
+  margin-top: 20px;
+  color: rgba(255, 253, 243, 0.74);
+  font-size: 19px;
+}
+
+.page-hero__panel {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  border: 1px solid rgba(255, 242, 0, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 253, 243, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.page-hero__panel span,
+.page-hero__panel a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 253, 243, 0.86);
+  font-weight: 850;
+}
+
+
