@@ -3,12 +3,12 @@ import { workSteps } from "../data/site";
 
 export function Process() {
   return (
-    <section className="section">
+    <section className="section process-section">
       <div className="container process-grid">
         <SectionHeader
           eyebrow="Процесс"
-          title="Понятный маршрут клиента от звонка до выдачи"
-          text="Такой блок снимает тревогу: человек заранее понимает, что будет происходить с автомобилем."
+          title="Порядок установки и обслуживания ГБО"
+          text="Перед началом работ осматриваем автомобиль, согласуем комплект оборудования, выполняем монтаж, настройку и финальную проверку системы."
         />
         <div className="timeline">
           {workSteps.map((step, index) => (
@@ -22,4 +22,3 @@ export function Process() {
     </section>
   );
 }
-

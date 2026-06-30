@@ -1,5 +1,6 @@
 import { benefits, services } from "../data/site";
 import { SectionHeader } from "../components/SectionHeader";
+import equipmentBackground from "../assets/gas-equipment-bg.jpg";
 
 export function Services() {
   return (
@@ -10,6 +11,18 @@ export function Services() {
           title="Полный цикл работ с газобаллонным оборудованием"
           text="Подбираем комплект под автомобиль, устанавливаем метановые и пропановые системы, обслуживаем ГБО и помогаем с оформлением."
         />
+        <div className="equipment-band">
+          <img src={equipmentBackground} alt="Газобаллонное оборудование в сервисной зоне" />
+          <div className="equipment-band__content">
+            <span>Оборудование и монтаж</span>
+            <h3>Комплектующие, настройка и безопасность в одном сервисе</h3>
+            <p>
+              Работаем с баллонами, редукторами, форсунками, магистралями и
+              электроникой ГБО. После установки проверяем герметичность и
+              корректную работу системы.
+            </p>
+          </div>
+        </div>
         <div className="services-grid">
           {services.map((service) => {
             const Icon = service.icon;

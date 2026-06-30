@@ -403,8 +403,21 @@ h3 {
   padding: 92px 0;
 }
 
+#services {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, #f6f3e7 0%, rgba(246, 243, 231, 0.7) 46%, #f6f3e7 100%),
+    url("../assets/section-workshop-bg.jpg") center / cover;
+}
+
 .section--muted {
-  background: #eee8cf;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, #eee8cf 0%, rgba(238, 232, 207, 0.5) 18%, rgba(238, 232, 207, 0.52) 82%, #f6f3e7 100%),
+    linear-gradient(90deg, rgba(238, 232, 207, 0.68), rgba(238, 232, 207, 0.38)),
+    url("../assets/section-equipment-detail.jpg") center / cover;
 }
 
 .section--dark {
@@ -423,18 +436,26 @@ h3 {
 }
 
 .brands-section {
-  padding: 32px 0 72px;
+  position: relative;
+  overflow: hidden;
+  padding: 56px 0 78px;
+  background:
+    linear-gradient(180deg, #f6f3e7 0%, rgba(246, 243, 231, 0.5) 42%, #eee8cf 100%),
+    linear-gradient(90deg, rgba(22, 22, 21, 0.08), transparent 42%),
+    url("../assets/section-equipment-detail.jpg") center / cover;
 }
 
 .brands-grid {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: 0.62fr 1.38fr;
   gap: 36px;
   align-items: center;
   padding: 30px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--paper);
+  background: rgba(255, 253, 243, 0.88);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
 }
 
 .brands-grid h2 {
@@ -444,22 +465,80 @@ h3 {
 }
 
 .brand-cloud {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(92px, 1fr));
   gap: 10px;
-  justify-content: flex-end;
 }
 
-.brand-cloud span {
-  min-width: 92px;
-  border: 1px solid rgba(215, 25, 32, 0.2);
+.brand-logo {
+  display: grid;
+  min-height: 112px;
+  grid-template-rows: 72px auto;
+  place-items: center;
+  gap: 8px;
+  padding: 13px 10px 12px;
+  border: 1px solid rgba(22, 22, 21, 0.1);
   border-radius: 8px;
-  background: var(--mint);
+  background:
+    linear-gradient(180deg, rgba(255, 253, 243, 0.96), rgba(246, 243, 231, 0.88)),
+    rgba(255, 253, 243, 0.9);
   color: var(--green-900);
-  font-size: 14px;
-  font-weight: 900;
-  padding: 11px 14px;
   text-align: center;
+  box-shadow: 0 12px 30px rgba(22, 22, 21, 0.08);
+  transition:
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.brand-logo:hover {
+  transform: translateY(-2px);
+  border-color: rgba(215, 25, 32, 0.28);
+  background: rgba(255, 253, 243, 0.98);
+}
+
+.brand-logo__image {
+  width: min(108px, 100%);
+  height: 62px;
+  object-fit: contain;
+  align-self: center;
+}
+
+.brand-logo--chrysler .brand-logo__image,
+.brand-logo--dodge .brand-logo__image {
+  width: min(132px, 100%);
+  height: 58px;
+}
+
+.brand-logo--mazda .brand-logo__image,
+.brand-logo--peugeot .brand-logo__image {
+  width: 102px;
+  height: 62px;
+}
+
+.brand-logo--toyota .brand-logo__image,
+.brand-logo--nissan .brand-logo__image {
+  width: 104px;
+  height: 58px;
+}
+
+.brand-logo--ssangyong .brand-logo__image {
+  width: min(150px, 100%);
+  height: 68px;
+}
+
+.brand-logo__label {
+  color: var(--ink-muted);
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.brand-logo--fallback span {
+  font-size: 13px;
 }
 
 .section-header {
@@ -467,6 +546,62 @@ h3 {
   max-width: 780px;
   gap: 14px;
   margin-bottom: 36px;
+}
+
+.equipment-band {
+  position: relative;
+  min-height: 340px;
+  overflow: hidden;
+  display: grid;
+  align-items: end;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  background: var(--green-950);
+  box-shadow: var(--shadow);
+  isolation: isolate;
+}
+
+.equipment-band::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(22, 22, 21, 0.9), rgba(22, 22, 21, 0.54) 44%, rgba(22, 22, 21, 0.12)),
+    linear-gradient(0deg, rgba(22, 22, 21, 0.72), transparent 52%);
+}
+
+.equipment-band img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.equipment-band__content {
+  display: grid;
+  max-width: 560px;
+  gap: 12px;
+  padding: 34px;
+}
+
+.equipment-band__content span {
+  color: var(--green-500);
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.equipment-band__content h3 {
+  color: var(--paper);
+  font-size: clamp(28px, 3vw, 42px);
+}
+
+.equipment-band__content p {
+  color: rgba(255, 253, 243, 0.74);
+  font-size: 17px;
 }
 
 .services-grid,
@@ -490,7 +625,8 @@ h3 {
   align-content: start;
   padding: 24px;
   border: 1px solid var(--line);
-  background: var(--paper);
+  background: rgba(255, 253, 243, 0.9);
+  backdrop-filter: blur(8px);
 }
 
 .service-card p,
@@ -524,7 +660,8 @@ h3 {
   padding: 16px;
   border: 1px solid rgba(215, 25, 32, 0.18);
   border-radius: 8px;
-  background: rgba(232, 245, 236, 0.68);
+  background: rgba(255, 248, 191, 0.72);
+  backdrop-filter: blur(8px);
   color: var(--green-900);
   font-weight: 800;
 }
@@ -543,7 +680,8 @@ h3 {
   gap: 26px;
   padding: 26px;
   border: 1px solid var(--line);
-  background: var(--paper);
+  background: rgba(255, 253, 243, 0.9);
+  backdrop-filter: blur(10px);
 }
 
 .price-card--featured {
@@ -592,9 +730,30 @@ h3 {
 }
 
 .process-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 58px;
+}
+
+.process-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, #f6f3e7 0%, rgba(246, 243, 231, 0.42) 20%, rgba(246, 243, 231, 0.46) 78%, #f6f3e7 100%),
+    linear-gradient(90deg, rgba(246, 243, 231, 0.72), rgba(246, 243, 231, 0.28)),
+    url("../assets/section-workshop-bg.jpg") center / cover;
+}
+
+.process-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 242, 0, 0.12), transparent 28%),
+    radial-gradient(circle at 88% 78%, rgba(215, 25, 32, 0.1), transparent 24%);
 }
 
 .timeline {
@@ -611,7 +770,8 @@ h3 {
   padding: 18px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--paper);
+  background: rgba(255, 253, 243, 0.88);
+  backdrop-filter: blur(8px);
 }
 
 .timeline-item span {
@@ -725,8 +885,9 @@ h3 {
 
 .contacts-section {
   background:
-    linear-gradient(135deg, rgba(255, 242, 0, 0.18), transparent 42%),
-    #f6f3e7;
+    linear-gradient(180deg, #f6f3e7 0%, rgba(246, 243, 231, 0.48) 22%, rgba(246, 243, 231, 0.5) 78%, #fffdf3 100%),
+    linear-gradient(90deg, rgba(246, 243, 231, 0.7), rgba(246, 243, 231, 0.34)),
+    url("../assets/section-equipment-detail.jpg") center / cover;
 }
 
 .contacts-grid {
@@ -773,7 +934,8 @@ h3 {
   padding: 24px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--paper);
+  background: rgba(255, 253, 243, 0.9);
+  backdrop-filter: blur(10px);
   box-shadow: var(--shadow);
 }
 
@@ -861,7 +1023,7 @@ h3 {
   }
 
   .brand-cloud {
-    justify-content: flex-start;
+    grid-template-columns: repeat(3, minmax(90px, 1fr));
   }
 }
 
@@ -921,6 +1083,24 @@ h3 {
 
   .brands-section {
     padding: 0 0 64px;
+  }
+
+  .brand-cloud {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .equipment-band {
+    min-height: 420px;
+  }
+
+  .equipment-band::after {
+    background:
+      linear-gradient(0deg, rgba(22, 22, 21, 0.88), rgba(22, 22, 21, 0.26)),
+      linear-gradient(90deg, rgba(22, 22, 21, 0.78), rgba(22, 22, 21, 0.18));
+  }
+
+  .equipment-band__content {
+    padding: 24px;
   }
 
   .section {
