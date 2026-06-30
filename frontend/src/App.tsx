@@ -1,6 +1,8 @@
 import { Header } from "./components/Header";
 import { Brands } from "./sections/Brands";
 import { Contacts } from "./sections/Contacts";
+import { Engineering } from "./sections/Engineering";
+import { Estimate } from "./sections/Estimate";
 import { Footer } from "./sections/Footer";
 import { Hero } from "./sections/Hero";
 import { Pricing } from "./sections/Pricing";
@@ -16,6 +18,8 @@ function App() {
       <main>
         <Hero />
         <Services />
+        <Engineering />
+        <Estimate />
         <Brands />
         <Pricing />
         <Process />

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { SectionHeader } from "../components/SectionHeader";
 
 type WorkImage = {
@@ -8,13 +8,10 @@ type WorkImage = {
   original: string;
 };
 
-const initialVisibleCount = 12;
-const visibleStep = 24;
+const featuredBrands = ["toyota", "lexus", "mercedes", "cadillac", "kia", "uaz"];
 
 export function Work() {
   const [images, setImages] = useState<WorkImage[]>([]);
-  const [selectedBrand, setSelectedBrand] = useState("all");
-  const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
 
   useEffect(() => {
     fetch("/works-gallery/manifest.json")
@@ -23,70 +20,61 @@ export function Work() {
       .catch(() => setImages([]));
   }, []);
 
-  const brands = Array.from(
-    new Map(images.map((image) => [image.slug, image.brand])).entries(),
-  ).map(([slug, brand]) => ({ slug, brand }));
-  const filteredImages =
-    selectedBrand === "all"
-      ? images
-      : images.filter((image) => image.slug === selectedBrand);
-  const visibleImages = filteredImages.slice(0, visibleCount);
+  const brands = useMemo(
+    () =>
+      Array.from(new Map(images.map((image) => [image.slug, image.brand])).entries()).map(
+        ([slug, brand]) => ({ slug, brand }),
+      ),
+    [images],
+  );
 
-  function selectBrand(slug: string) {
-    setSelectedBrand(slug);
-    setVisibleCount(initialVisibleCount);
-  }
+  const featuredImages = useMemo(() => {
+    if (!images.length) {
+      return [];
+    }
+
+    const selected = featuredBrands
+      .map((slug) => images.find((image) => image.slug === slug))
+      .filter((image): image is WorkImage => Boolean(image));
+
+    return selected.length >= 4 ? selected : images.slice(0, 6);
+  }, [images]);
 
   return (
     <section className="section section--dark" id="work">
       <div className="container">
         <SectionHeader
-          eyebrow="Качество работ"
-          title="Галерея реальных установок и обслуживания ГБО"
-          text="Собрали фотографии работ из действующей галереи СТО ТрансГаз: монтаж, диагностика, прокладка магистралей и проверка оборудования."
+          eyebrow="Работы"
+          title="Избранные установки: аккуратный монтаж, чистая компоновка, понятный результат"
+          text="Показываем не весь архив подряд, а сильные примеры работ. Полная галерея может жить отдельной страницей или подгружаться по маркам."
         />
         <div className="work-meta">
-          <span>{images.length || 616} фотографий работ</span>
-          <span>{brands.length || 26} марок автомобилей</span>
-          <span>Открываются в полном размере</span>
+          <span>{images.length || 617} фото в архиве</span>
+          <span>{brands.length || 27} марок автомобилей</span>
+          <span>на лендинге только отобранные работы</span>
         </div>
-        <div className="brand-filter" aria-label="Фильтр работ по марке автомобиля">
-          <button
-            className={selectedBrand === "all" ? "brand-filter__item is-active" : "brand-filter__item"}
-            type="button"
-            onClick={() => selectBrand("all")}
-          >
-            Все
-          </button>
-          {brands.map((brand) => (
-            <button
-              className={
-                selectedBrand === brand.slug ? "brand-filter__item is-active" : "brand-filter__item"
-              }
-              type="button"
-              onClick={() => selectBrand(brand.slug)}
-              key={brand.slug}
+
+        <div className="showcase-grid">
+          {featuredImages.map((image, index) => (
+            <a
+              className={index === 0 ? "showcase-card showcase-card--lead" : "showcase-card"}
+              href={image.src}
+              target="_blank"
+              rel="noreferrer"
+              key={image.src}
             >
-              {brand.brand}
-            </button>
-          ))}
-        </div>
-        <div className="work-grid work-grid--gallery">
-          {visibleImages.map((image, index) => (
-            <a className="work-card" href={image.src} target="_blank" rel="noreferrer" key={image.src}>
-              <img src={image.src} alt={`Работа СТО ТрансГаз ${index + 1}`} loading="lazy" />
+              <img src={image.src} alt={`Работа СТО ТрансГаз: ${image.brand}`} loading="lazy" />
+              <span>{image.brand}</span>
             </a>
           ))}
         </div>
-        {visibleCount < filteredImages.length ? (
-          <button
-            className="button button--gallery"
-            type="button"
-            onClick={() => setVisibleCount((count) => count + visibleStep)}
-          >
-            Показать еще работы
-          </button>
-        ) : null}
+
+        <div className="work-archive-note">
+          <p>Полный фотоархив лучше вынести отдельно: так лендинг останется быстрым, а клиент увидит лучшие работы сразу.</p>
+          <a className="button button--ghost button--dark" href="#contacts">
+            Запросить примеры по моей марке
+          </a>
+        </div>
       </div>
     </section>
   );
