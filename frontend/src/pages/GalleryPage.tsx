@@ -59,7 +59,7 @@ export function GalleryPage() {
           </div>
           <div className="page-hero__panel">
             <span>более 600 фотографий работ</span>
-            <span>22 марки автомобилей</span>
+            <span>более 20 марок автомобилей</span>
             <span>монтаж, настройка и обслуживание</span>
           </div>
         </div>

@@ -1,0 +1,110 @@
+.reviews-section {
+  padding: 42px 0;
+  background: #f6f3e7;
+}
+
+.reviews-panel {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.75fr) 180px minmax(320px, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  padding: 18px;
+  border: 1px solid rgba(22, 22, 21, 0.1);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 242, 0, 0.14), transparent 34%),
+    rgba(255, 253, 243, 0.94);
+  box-shadow: 0 18px 50px rgba(22, 22, 21, 0.1);
+}
+
+.reviews-summary {
+  display: grid;
+  gap: 8px;
+  padding: 4px 8px;
+}
+
+.reviews-summary h2 {
+  color: var(--green-950);
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1;
+}
+
+.reviews-summary p {
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.reviews-rating {
+  display: grid;
+  gap: 4px;
+  justify-items: center;
+  padding: 16px 14px;
+  border: 1px solid rgba(22, 22, 21, 0.1);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 242, 0, 0.24), transparent 48%),
+    linear-gradient(180deg, #24221d, #161615);
+  color: var(--paper);
+  text-align: center;
+}
+
+.reviews-rating__score {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--green-500);
+}
+
+.reviews-rating__score strong {
+  color: var(--paper);
+  font-size: 42px;
+  line-height: 1;
+}
+
+.reviews-rating span {
+  color: var(--paper);
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.reviews-rating small {
+  color: rgba(255, 253, 243, 0.64);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.reviews-quotes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.review-card {
+  display: grid;
+  gap: 10px;
+  padding: 15px;
+  border: 1px solid rgba(22, 22, 21, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 253, 243, 0.72);
+}
+
+.review-card svg {
+  color: var(--green-800);
+}
+
+.review-card p {
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 780;
+  line-height: 1.35;
+}
+
+.review-card span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.reviews-link {
+  white-space: nowrap;
+}

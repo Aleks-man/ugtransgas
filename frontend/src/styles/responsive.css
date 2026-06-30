@@ -45,6 +45,18 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .reviews-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .reviews-quotes {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-link {
+    justify-self: start;
+  }
+
   .estimate-panel {
     justify-items: start;
   }
@@ -143,6 +155,15 @@
 
   .gallery-brand-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .reviews-section {
+    padding: 36px 0;
+  }
+
+  .reviews-panel,
+  .reviews-quotes {
+    grid-template-columns: 1fr;
   }
 
   .engineering-copy h2 {
