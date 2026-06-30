@@ -1,17 +1,28 @@
 import { Phone } from "lucide-react";
 import { contactInfo, navItems } from "../data/site";
+import { AppLink } from "./AppLink";
 import { Logo } from "./Logo";
 
-export function Header() {
+type HeaderProps = {
+  currentPath: string;
+};
+
+export function Header({ currentPath }: HeaderProps) {
   return (
     <header className="site-header">
       <div className="container header__inner">
-        <Logo />
+        <AppLink to="/" aria-label="СТО ТрансГаз">
+          <Logo />
+        </AppLink>
         <nav className="header__nav" aria-label="Основная навигация">
           {navItems.map((item) => (
-            <a key={item.href} href={item.href}>
+            <AppLink
+              aria-current={currentPath === item.href ? "page" : undefined}
+              key={item.href}
+              to={item.href}
+            >
               {item.label}
-            </a>
+            </AppLink>
           ))}
         </nav>
         <a className="icon-link" href={contactInfo.phoneHref} aria-label="Позвонить">

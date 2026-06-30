@@ -27,7 +27,7 @@ export function Estimate() {
             </span>
           ))}
         </div>
-        <a className="button button--primary" href="#contacts">
+        <a className="button button--primary" href="/contacts">
           Получить расчёт
           <ArrowRight size={18} />
         </a>

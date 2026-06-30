@@ -148,6 +148,11 @@ img {
   background: rgba(255, 242, 0, 0.28);
 }
 
+.header__nav a[aria-current="page"] {
+  color: var(--green-950);
+  background: var(--green-500);
+}
+
 .icon-link,
 .button {
   display: inline-flex;
@@ -424,6 +429,78 @@ h3 {
 
 .section {
   padding: 92px 0;
+}
+
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 78px 0 72px;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(255, 242, 0, 0.18), transparent 30%),
+    radial-gradient(circle at 10% 86%, rgba(215, 25, 32, 0.12), transparent 28%),
+    linear-gradient(180deg, #24221d 0%, #161615 100%);
+  color: var(--paper);
+}
+
+.page-hero--services {
+  background:
+    linear-gradient(90deg, rgba(22, 22, 21, 0.92), rgba(22, 22, 21, 0.58)),
+    url("../assets/engineering-workshop-bg.jpg") right center / cover no-repeat,
+    #161615;
+}
+
+.page-hero--gallery {
+  background:
+    linear-gradient(90deg, rgba(22, 22, 21, 0.94), rgba(22, 22, 21, 0.62)),
+    url("../assets/section-workshop-bg.jpg") center / cover no-repeat,
+    #161615;
+}
+
+.page-hero--contacts {
+  background:
+    linear-gradient(90deg, rgba(22, 22, 21, 0.92), rgba(22, 22, 21, 0.58)),
+    url("../assets/section-equipment-detail.jpg") center / cover no-repeat,
+    #161615;
+}
+
+.page-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.62fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.page-hero h1 {
+  max-width: 780px;
+  color: var(--paper);
+  font-size: clamp(44px, 6vw, 78px);
+  line-height: 0.95;
+}
+
+.page-hero p {
+  max-width: 720px;
+  margin-top: 20px;
+  color: rgba(255, 253, 243, 0.74);
+  font-size: 19px;
+}
+
+.page-hero__panel {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  border: 1px solid rgba(255, 242, 0, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 253, 243, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.page-hero__panel span,
+.page-hero__panel a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 253, 243, 0.86);
+  font-weight: 850;
 }
 
 #services {
@@ -755,6 +832,161 @@ h3 {
 .price-card li svg {
   flex: 0 0 auto;
   color: var(--green-500);
+}
+
+.service-detail-section {
+  background:
+    linear-gradient(180deg, #f6f3e7 0%, rgba(246, 243, 231, 0.74) 100%),
+    url("../assets/section-equipment-detail.jpg") center / cover;
+}
+
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.service-detail-card {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  min-height: 360px;
+  padding: 24px;
+  border: 1px solid rgba(22, 22, 21, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 253, 243, 0.9);
+  box-shadow: 0 18px 50px rgba(22, 22, 21, 0.08);
+}
+
+.service-detail-card h3 {
+  color: var(--green-950);
+  font-size: 24px;
+}
+
+.service-detail-card p {
+  color: var(--muted);
+}
+
+.service-detail-card ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-detail-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--text);
+  font-weight: 800;
+}
+
+.service-detail-card svg {
+  flex: 0 0 auto;
+  color: var(--green-800);
+}
+
+.gallery-page-section {
+  background:
+    linear-gradient(180deg, #f6f3e7 0%, rgba(246, 243, 231, 0.76) 100%),
+    url("../assets/section-equipment-detail.jpg") center / cover;
+}
+
+.gallery-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.gallery-brand-list {
+  position: sticky;
+  top: 128px;
+  display: grid;
+  gap: 8px;
+  max-height: calc(100vh - 150px);
+  overflow: auto;
+  padding: 12px;
+  border: 1px solid rgba(22, 22, 21, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 253, 243, 0.88);
+  box-shadow: 0 18px 50px rgba(22, 22, 21, 0.08);
+}
+
+.gallery-brand {
+  min-height: 40px;
+  border: 1px solid rgba(22, 22, 21, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 253, 243, 0.72);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 850;
+  text-align: left;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.gallery-brand:hover,
+.gallery-brand.is-active {
+  border-color: rgba(215, 25, 32, 0.34);
+  background: var(--mint);
+  transform: translateY(-1px);
+}
+
+.gallery-results {
+  display: grid;
+  gap: 18px;
+}
+
+.gallery-results__head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.gallery-results__head h2 {
+  font-size: clamp(30px, 4vw, 54px);
+}
+
+.gallery-results__head span {
+  color: var(--muted);
+  font-weight: 850;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.gallery-grid a {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid rgba(22, 22, 21, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 253, 243, 0.9);
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 220ms ease;
+}
+
+.gallery-grid a:hover img {
+  transform: scale(1.035);
+}
+
+.gallery-more {
+  justify-self: center;
+  margin-top: 8px;
 }
 
 .process-grid {
@@ -1284,10 +1516,12 @@ h3 {
   }
 
   .hero-grid,
+  .page-hero__grid,
   .engineering-grid,
   .estimate-panel,
   .process-grid,
-  .contacts-grid {
+  .contacts-grid,
+  .gallery-layout {
     grid-template-columns: 1fr;
   }
 
@@ -1304,10 +1538,21 @@ h3 {
 
   .stats-row,
   .services-grid,
+  .service-detail-grid,
   .benefits-strip,
   .brands-grid,
   .work-grid--gallery,
   .showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-brand-list {
+    position: static;
+    grid-template-columns: repeat(3, 1fr);
+    max-height: none;
+  }
+
+  .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1387,9 +1632,27 @@ h3 {
   .pricing-grid,
   .work-grid,
   .benefits-strip,
+  .service-detail-grid,
   .brands-grid,
+  .gallery-grid,
   .showcase-grid {
     grid-template-columns: 1fr;
+  }
+
+  .page-hero {
+    padding: 58px 0;
+  }
+
+  .page-hero h1 {
+    font-size: 42px;
+  }
+
+  .page-hero__panel {
+    padding: 18px;
+  }
+
+  .gallery-brand-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .engineering-copy h2 {

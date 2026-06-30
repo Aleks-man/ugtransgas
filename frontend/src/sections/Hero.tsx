@@ -20,11 +20,11 @@ export function Hero() {
             салона и багажника, проверяем безопасность до выдачи и сопровождаем после установки.
           </p>
           <div className="hero-actions">
-            <a className="button button--primary" href="#contacts">
+            <a className="button button--primary" href="/contacts">
               Рассчитать установку
               <ArrowRight size={18} />
             </a>
-            <a className="button button--ghost" href="#pricing">
+            <a className="button button--ghost" href="/services">
               Как проходит установка
             </a>
           </div>

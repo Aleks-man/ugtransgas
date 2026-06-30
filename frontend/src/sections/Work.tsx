@@ -72,7 +72,7 @@ export function Work() {
 
         <div className="work-archive-note">
           <p>Подберем примеры установок на похожий автомобиль и покажем варианты размещения оборудования до записи.</p>
-          <a className="button button--ghost button--dark" href="#contacts">
+          <a className="button button--ghost button--dark" href="/contacts">
             Запросить примеры по моей марке
           </a>
         </div>

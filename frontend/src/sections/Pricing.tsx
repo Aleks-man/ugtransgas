@@ -30,7 +30,7 @@ export function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a className="button button--full" href="#contacts">
+              <a className="button button--full" href="/contacts">
                 Запросить расчет
               </a>
             </article>
