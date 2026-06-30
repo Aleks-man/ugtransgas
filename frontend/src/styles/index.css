@@ -1249,9 +1249,12 @@ h3 {
 }
 
 .footer {
-  border-top: 1px solid var(--line);
-  background: var(--paper);
-  padding: 24px 0;
+  border-top: 1px solid rgba(255, 242, 0, 0.16);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(255, 242, 0, 0.12), transparent 28%),
+    radial-gradient(circle at 92% 80%, rgba(215, 25, 32, 0.1), transparent 24%),
+    linear-gradient(180deg, #24221d 0%, #161615 100%);
+  padding: 26px 0;
 }
 
 .footer__inner {
@@ -1262,7 +1265,17 @@ h3 {
 }
 
 .footer p {
-  color: var(--muted);
+  max-width: 620px;
+  color: rgba(255, 253, 243, 0.72);
+  text-align: right;
+}
+
+.footer .logo__text strong {
+  color: var(--paper);
+}
+
+.footer .logo__text span {
+  color: rgba(255, 253, 243, 0.66);
 }
 
 @media (max-width: 1040px) {
