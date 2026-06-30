@@ -25,15 +25,28 @@
 
 .contact-list a,
 .contact-list span {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  align-items: flex-start;
   gap: 12px;
   color: var(--green-900);
   font-weight: 800;
 }
 
 .contact-list svg {
-  color: var(--green-500);
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  color: var(--green-800);
+}
+
+.contact-list a {
+  transition: color 180ms ease;
+}
+
+.contact-list a:hover {
+  color: var(--green-800);
 }
 
 .messenger-actions {

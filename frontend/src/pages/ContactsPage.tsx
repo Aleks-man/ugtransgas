@@ -24,10 +24,10 @@ export function ContactsPage() {
               <Mail size={20} />
               {contactInfo.email}
             </a>
-            <span>
+            <a href={contactInfo.route} target="_blank" rel="noreferrer">
               <MapPin size={20} />
               {contactInfo.address}
-            </span>
+            </a>
             <span>
               <Timer size={20} />
               {contactInfo.schedule}
