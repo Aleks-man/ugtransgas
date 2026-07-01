@@ -1,3 +1,4 @@
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { SectionHeader } from "../components/SectionHeader";
 
@@ -15,6 +16,7 @@ export function GalleryPage() {
   const [activeSlug, setActiveSlug] = useState<string>("");
   const [visibleCount, setVisibleCount] = useState(pageSize);
   const [isLoading, setIsLoading] = useState(true);
+  const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
 
   useEffect(() => {
     fetch("/works-gallery/manifest.json")
@@ -41,10 +43,72 @@ export function GalleryPage() {
   );
 
   const visibleImages = activeImages.slice(0, visibleCount);
+  const activeLightboxImage = activeImageIndex === null ? null : activeImages[activeImageIndex];
+
+  useEffect(() => {
+    if (activeImageIndex === null) {
+      return;
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setActiveImageIndex(null);
+      }
+
+      if (event.key === "ArrowLeft") {
+        setActiveImageIndex((index) => {
+          if (index === null || activeImages.length === 0) {
+            return index;
+          }
+
+          return index === 0 ? activeImages.length - 1 : index - 1;
+        });
+      }
+
+      if (event.key === "ArrowRight") {
+        setActiveImageIndex((index) => {
+          if (index === null || activeImages.length === 0) {
+            return index;
+          }
+
+          return index === activeImages.length - 1 ? 0 : index + 1;
+        });
+      }
+    }
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [activeImageIndex, activeImages.length]);
 
   function selectBrand(slug: string) {
     setActiveSlug(slug);
     setVisibleCount(pageSize);
+    setActiveImageIndex(null);
+  }
+
+  function showPreviousImage() {
+    setActiveImageIndex((index) => {
+      if (index === null || activeImages.length === 0) {
+        return index;
+      }
+
+      return index === 0 ? activeImages.length - 1 : index - 1;
+    });
+  }
+
+  function showNextImage() {
+    setActiveImageIndex((index) => {
+      if (index === null || activeImages.length === 0) {
+        return index;
+      }
+
+      return index === activeImages.length - 1 ? 0 : index + 1;
+    });
   }
 
   return (
@@ -92,7 +156,7 @@ export function GalleryPage() {
               </div>
             </div>
           ) : (
-          <div className="gallery-layout">
+            <div className="gallery-layout">
             <aside className="gallery-brand-list" aria-label="Марки автомобилей">
               {brands.map((brand) => (
                 <button
@@ -114,9 +178,14 @@ export function GalleryPage() {
 
               <div className="gallery-grid">
                 {visibleImages.map((image) => (
-                  <a href={image.src} key={image.src} target="_blank" rel="noreferrer">
+                  <button
+                    className="gallery-image-button"
+                    key={image.src}
+                    onClick={() => setActiveImageIndex(activeImages.findIndex((item) => item.src === image.src))}
+                    type="button"
+                  >
                     <img src={image.src} alt={`Работа СТО ТрансГаз: ${image.brand}`} loading="lazy" />
-                  </a>
+                  </button>
                 ))}
               </div>
 
@@ -130,10 +199,59 @@ export function GalleryPage() {
                 </button>
               ) : null}
             </div>
-          </div>
+            </div>
           )}
         </div>
       </section>
+
+      {activeLightboxImage ? (
+        <div className="gallery-lightbox" onClick={() => setActiveImageIndex(null)} role="dialog" aria-modal="true">
+          <button
+            className="gallery-lightbox__button gallery-lightbox__close"
+            onClick={() => setActiveImageIndex(null)}
+            type="button"
+            aria-label="Закрыть"
+          >
+            <X size={26} />
+          </button>
+          <button
+            className="gallery-lightbox__button gallery-lightbox__nav gallery-lightbox__nav--prev"
+            onClick={(event) => {
+              event.stopPropagation();
+              showPreviousImage();
+            }}
+            type="button"
+            aria-label="Предыдущее фото"
+          >
+            <ChevronLeft size={34} />
+          </button>
+          <div className="gallery-lightbox__stage" onClick={(event) => event.stopPropagation()}>
+            <button
+              className="gallery-lightbox__button gallery-lightbox__close"
+              onClick={() => setActiveImageIndex(null)}
+              type="button"
+              aria-label="Закрыть"
+            >
+              <X size={28} />
+            </button>
+            <figure className="gallery-lightbox__figure">
+            <img src={activeLightboxImage.src} alt={`Работа СТО ТрансГаз: ${activeLightboxImage.brand}`} />
+            <figcaption>{activeLightboxImage.brand}</figcaption>
+            </figure>
+          </div>
+          <button
+            className="gallery-lightbox__button gallery-lightbox__nav gallery-lightbox__nav--next"
+            onClick={(event) => {
+              event.stopPropagation();
+              showNextImage();
+            }}
+            type="button"
+            aria-label="Следующее фото"
+          >
+            <ChevronRight size={34} />
+          </button>
+        </div>
+      ) : null}
     </>
   );
 }

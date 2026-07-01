@@ -42,7 +42,7 @@
   .gallery-brand-list {
     position: static;
     grid-template-columns: repeat(3, 1fr);
-    max-height: none;
+    max-height: 320px;
   }
 
   .gallery-grid {
@@ -177,6 +177,40 @@
 
   .gallery-brand-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-lightbox {
+    position: fixed;
+    padding: 64px 14px 28px;
+  }
+
+  .gallery-lightbox__button {
+    width: 42px;
+    height: 42px;
+  }
+
+  .gallery-lightbox__close {
+    top: 8px;
+    right: 8px;
+  }
+
+  .gallery-lightbox__stage {
+    max-width: 100%;
+  }
+
+  .gallery-lightbox__nav {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .gallery-lightbox__nav--prev {
+    left: 18px;
+  }
+
+  .gallery-lightbox__nav--next {
+    right: 18px;
   }
 
   .reviews-section {
