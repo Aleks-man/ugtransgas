@@ -1,13 +1,14 @@
 ﻿.section {
-  padding: 92px 0;
+  padding: var(--section-y) 0;
 }
 
 .site-path-section {
   position: relative;
   z-index: 1;
-  margin-top: -28px;
-  padding-bottom: 42px;
-  background: #f6f3e7;
+  margin-top: -46px;
+  padding-top: 18px;
+  padding-bottom: 56px;
+  background: linear-gradient(180deg, rgba(246, 243, 231, 0), #f6f3e7 76px);
 }
 
 .site-path {

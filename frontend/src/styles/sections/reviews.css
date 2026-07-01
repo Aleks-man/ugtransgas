@@ -1,5 +1,5 @@
 .reviews-section {
-  padding: 42px 0;
+  padding: var(--section-y-compact) 0;
   background: #f6f3e7;
 }
 

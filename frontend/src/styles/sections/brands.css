@@ -1,7 +1,7 @@
 ﻿.brands-section {
   position: relative;
   overflow: hidden;
-  padding: 44px 0 66px;
+  padding: var(--section-y-compact) 0 var(--section-y);
   background:
     linear-gradient(180deg, #f6f3e7 0%, rgba(246, 243, 231, 0.5) 42%, #eee8cf 100%),
     linear-gradient(90deg, rgba(22, 22, 21, 0.08), transparent 42%),
