@@ -2,6 +2,9 @@
   "name": "ugtransgas",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "workspaces": [
     "frontend",
     "backend"
@@ -15,4 +18,3 @@
     "dev:backend": "npm --workspace backend run dev"
   }
 }
-
