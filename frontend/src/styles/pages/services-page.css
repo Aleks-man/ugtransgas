@@ -1,6 +1,7 @@
 ﻿.service-detail-section {
   background:
-    linear-gradient(180deg, rgba(222, 211, 184, 0.86) 0%, rgba(222, 211, 184, 0.46) 100%),
+    linear-gradient(180deg, rgba(222, 211, 184, 0.78) 0%, rgba(222, 211, 184, 0.48) 48%, rgba(222, 211, 184, 0.78) 100%),
+    linear-gradient(90deg, rgba(248, 240, 216, 0.58), rgba(248, 240, 216, 0.32)),
     url("../../assets/section-equipment-detail.jpg") center / cover;
 }
 
