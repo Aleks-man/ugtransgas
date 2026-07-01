@@ -34,9 +34,13 @@ export function Header({ currentPath }: HeaderProps) {
   return (
     <header className="site-header">
       <div className="container header__inner">
-        <AppLink to="/" aria-label="СТО ТрансГаз">
-          <Logo />
-        </AppLink>
+        <div className="header__brand">
+          <AppLink className="header__logo-link" to="/" aria-label="СТО ТрансГаз">
+            <Logo />
+          </AppLink>
+          <span className="header__descriptor">Лицензированный сервисный центр по установке ГБО</span>
+        </div>
+
         <nav className="header__nav" ref={navRef} aria-label="Основная навигация">
           <span
             className="header__nav-indicator"
@@ -61,7 +65,8 @@ export function Header({ currentPath }: HeaderProps) {
             );
           })}
         </nav>
-        <a className="icon-link" href={contactInfo.phoneHref} aria-label="Позвонить">
+
+        <a className="header__phone" href={contactInfo.phoneHref} aria-label="Позвонить">
           <Phone size={18} />
           <span>{contactInfo.phone}</span>
         </a>

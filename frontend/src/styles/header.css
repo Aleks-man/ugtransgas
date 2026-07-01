@@ -12,7 +12,27 @@
   min-height: 104px;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 22px;
+}
+
+.header__brand {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 16px;
+}
+
+.header__logo-link {
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+
+.header__descriptor {
+  max-width: 260px;
+  color: rgba(255, 253, 243, 0.78);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.25;
 }
 
 .logo {
@@ -71,6 +91,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-left: auto;
   padding: 6px;
   border: 1px solid rgba(255, 242, 0, 0.18);
   border-radius: 999px;
@@ -116,5 +137,29 @@
 .header__nav-label {
   position: relative;
   z-index: 1;
+}
+
+.header__phone {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--green-500);
+  font-size: 15px;
+  font-weight: 900;
+  white-space: nowrap;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.header__phone svg {
+  color: currentColor;
+}
+
+.header__phone:hover {
+  color: #fff26a;
+  transform: translateY(-1px);
 }
 

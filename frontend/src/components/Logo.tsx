@@ -2,7 +2,7 @@ import logoSrc from "../assets/site/logo-spaced.png";
 
 export function Logo() {
   return (
-    <a className="logo" href="#top" aria-label="СТО ТрансГаз">
+    <span className="logo" aria-hidden="true">
       <span className="logo__mark">
         <img src={logoSrc} alt="" />
       </span>
@@ -10,6 +10,6 @@ export function Logo() {
         <strong>СТО ТрансГаз</strong>
         <span>установка и сервис ГБО</span>
       </span>
-    </a>
+    </span>
   );
 }

@@ -3,6 +3,10 @@
     display: none;
   }
 
+  .header__descriptor {
+    max-width: 230px;
+  }
+
   .hero-grid,
   .page-hero__grid,
   .engineering-grid,
@@ -87,7 +91,8 @@
     min-height: 86px;
   }
 
-  .icon-link span {
+  .header__descriptor,
+  .header__phone span {
     display: none;
   }
 
