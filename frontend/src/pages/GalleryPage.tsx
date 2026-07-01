@@ -14,6 +14,7 @@ export function GalleryPage() {
   const [images, setImages] = useState<WorkImage[]>([]);
   const [activeSlug, setActiveSlug] = useState<string>("");
   const [visibleCount, setVisibleCount] = useState(pageSize);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch("/works-gallery/manifest.json")
@@ -22,7 +23,8 @@ export function GalleryPage() {
         setImages(items);
         setActiveSlug(items[0]?.slug ?? "");
       })
-      .catch(() => setImages([]));
+      .catch(() => setImages([]))
+      .finally(() => setIsLoading(false));
   }, []);
 
   const brands = useMemo(
@@ -73,6 +75,23 @@ export function GalleryPage() {
             text="В галерее собраны реальные установки на легковых и коммерческих автомобилях: от размещения баллона до аккуратной компоновки под капотом."
           />
 
+          {isLoading ? (
+            <div className="gallery-layout gallery-loading" aria-label="Загрузка галереи">
+              <aside className="gallery-brand-list" aria-hidden="true">
+                {Array.from({ length: 10 }).map((_, index) => (
+                  <span className="gallery-loading__brand" key={index} />
+                ))}
+              </aside>
+              <div className="gallery-results">
+                <span className="gallery-loading__head" />
+                <div className="gallery-grid">
+                  {Array.from({ length: 6 }).map((_, index) => (
+                    <span className="gallery-loading__thumb" key={index} />
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : (
           <div className="gallery-layout">
             <aside className="gallery-brand-list" aria-label="Марки автомобилей">
               {brands.map((brand) => (
@@ -112,6 +131,7 @@ export function GalleryPage() {
               ) : null}
             </div>
           </div>
+          )}
         </div>
       </section>
     </>

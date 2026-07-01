@@ -1,8 +1,5 @@
 ﻿.contacts-section {
-  background:
-    linear-gradient(180deg, rgba(222, 211, 184, 0.86) 0%, rgba(222, 211, 184, 0.34) 22%, rgba(222, 211, 184, 0.36) 78%, rgba(248, 240, 216, 0.9) 100%),
-    linear-gradient(90deg, rgba(222, 211, 184, 0.54), rgba(222, 211, 184, 0.22)),
-    url("../../assets/section-equipment-detail.jpg") center / cover;
+  background: linear-gradient(180deg, var(--surface-soft) 0%, var(--surface) 100%);
 }
 
 .contacts-grid {
@@ -59,11 +56,10 @@
 .lead-form {
   display: grid;
   gap: 14px;
-  padding: 24px;
+  padding: 26px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: rgba(248, 240, 216, 0.9);
-  backdrop-filter: blur(10px);
+  background: var(--surface);
   box-shadow: var(--shadow);
 }
 
