@@ -9,8 +9,8 @@
       rgba(22, 22, 21, 0.72) 0%,
       rgba(32, 31, 28, 0.64) 48%,
       rgba(76, 73, 62, 0.46) 68%,
-      rgba(246, 243, 231, 0.72) 90%,
-      #f6f3e7 100%
+      rgba(222, 211, 184, 0.76) 90%,
+      var(--page-bg) 100%
     ),
     radial-gradient(circle at 78% 16%, rgba(255, 242, 0, 0.24), transparent 30%),
     radial-gradient(circle at 16% 78%, rgba(215, 25, 32, 0.12), transparent 30%),
@@ -27,9 +27,9 @@
   background: linear-gradient(
     180deg,
     transparent 0%,
-    rgba(246, 243, 231, 0.28) 35%,
-    rgba(246, 243, 231, 0.78) 72%,
-    #f6f3e7 100%
+    rgba(222, 211, 184, 0.24) 35%,
+    rgba(222, 211, 184, 0.8) 72%,
+    var(--page-bg) 100%
   );
 }
 
@@ -64,7 +64,7 @@
 
 .hero-copy h1 {
   max-width: 690px;
-  color: #fffdf3;
+  color: var(--paper);
   font-size: clamp(38px, 4.5vw, 58px);
   line-height: 1;
   overflow-wrap: break-word;
@@ -185,7 +185,7 @@ h3 {
   padding: 18px;
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 8px;
-  background: rgba(255, 253, 247, 0.9);
+  background: rgba(248, 240, 216, 0.92);
   box-shadow: 0 20px 48px rgba(0, 0, 0, 0.24);
 }
 
@@ -218,7 +218,7 @@ h3 {
   padding: 18px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: rgba(255, 253, 247, 0.78);
+  background: rgba(248, 240, 216, 0.82);
 }
 
 .stat strong {

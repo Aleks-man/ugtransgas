@@ -82,7 +82,7 @@
   align-content: start;
   padding: 24px;
   border: 1px solid var(--line);
-  background: rgba(255, 253, 243, 0.9);
+  background: rgba(248, 240, 216, 0.9);
   backdrop-filter: blur(8px);
 }
 
@@ -117,7 +117,7 @@
   padding: 16px;
   border: 1px solid rgba(215, 25, 32, 0.18);
   border-radius: 8px;
-  background: rgba(255, 248, 191, 0.72);
+  background: rgba(244, 233, 164, 0.7);
   backdrop-filter: blur(8px);
   color: var(--green-900);
   font-weight: 800;
