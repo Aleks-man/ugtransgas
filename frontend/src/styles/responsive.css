@@ -173,14 +173,51 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .gallery-layout {
+    gap: 18px;
+  }
+
+  .gallery-brand-select {
+    display: grid;
+    gap: 8px;
+  }
+
+  .gallery-brand-list {
+    display: none;
+  }
+
+  .gallery-grid {
+    gap: 16px;
+  }
+
+  .gallery-image-button {
+    display: block;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .gallery-image-button img {
+    display: block;
+  }
+
   .gallery-lightbox {
     position: fixed;
     padding: 64px 14px 28px;
   }
 
   .gallery-lightbox__button {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .gallery-lightbox__close svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .gallery-lightbox__nav svg {
+    width: 18px;
+    height: 18px;
   }
 
   .gallery-lightbox__close {
