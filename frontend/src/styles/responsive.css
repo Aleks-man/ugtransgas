@@ -3,6 +3,14 @@
     display: none;
   }
 
+  .mobile-bottom-nav {
+    display: flex;
+  }
+
+  body {
+    padding-bottom: 76px;
+  }
+
   .header__descriptor {
     max-width: 230px;
   }
@@ -86,9 +94,24 @@
     min-height: 86px;
   }
 
-  .header__descriptor,
-  .header__phone span {
+  .header__descriptor {
     display: none;
+  }
+
+  .header__phone {
+    font-size: 13px;
+  }
+
+  .mobile-bottom-nav {
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .mobile-bottom-nav__link {
+    min-height: 38px;
+    padding: 0 6px;
+    font-size: 12px;
   }
 
   .logo__text span {
@@ -277,6 +300,10 @@
 
   .showcase-grid {
     grid-auto-rows: 260px;
+  }
+
+  .showcase-grid .showcase-card:nth-child(n + 4) {
+    display: none;
   }
 
   .work-archive-note {

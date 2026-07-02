@@ -33,45 +33,64 @@ export function Header({ currentPath }: HeaderProps) {
   }, [currentPath]);
 
   return (
-    <header className="site-header">
-      <div className="container header__inner">
-        <div className="header__brand">
-          <AppLink className="header__logo-link" to="/" aria-label="СТО ТрансГаз">
-            <Logo />
-          </AppLink>
-          <span className="header__descriptor">Лицензированный сервисный центр по установке ГБО</span>
+    <>
+      <header className="site-header">
+        <div className="container header__inner">
+          <div className="header__brand">
+            <AppLink className="header__logo-link" to="/" aria-label="СТО ТрансГаз">
+              <Logo />
+            </AppLink>
+            <span className="header__descriptor">Лицензированный сервисный центр по установке ГБО</span>
+          </div>
+
+          <nav className="header__nav" ref={navRef} aria-label="Основная навигация">
+            <span
+              className="header__nav-indicator"
+              style={{
+                opacity: indicatorStyle.width ? 1 : 0,
+                transform: `translateX(${indicatorStyle.x}px)`,
+                width: `${indicatorStyle.width}px`,
+              }}
+            />
+            {navItems.map((item) => {
+              const isActive = currentPath === item.href;
+
+              return (
+                <AppLink
+                  aria-current={isActive ? "page" : undefined}
+                  className="header__nav-link"
+                  key={item.href}
+                  to={item.href}
+                >
+                  <span className="header__nav-label">{item.label}</span>
+                </AppLink>
+              );
+            })}
+          </nav>
+
+          <a className="header__phone" href={contactInfo.phoneHref} aria-label="Позвонить">
+            <Phone size={18} />
+            <span>{contactInfo.phone}</span>
+          </a>
         </div>
+      </header>
 
-        <nav className="header__nav" ref={navRef} aria-label="Основная навигация">
-          <span
-            className="header__nav-indicator"
-            style={{
-              opacity: indicatorStyle.width ? 1 : 0,
-              transform: `translateX(${indicatorStyle.x}px)`,
-              width: `${indicatorStyle.width}px`,
-            }}
-          />
-          {navItems.map((item) => {
-            const isActive = currentPath === item.href;
+      <nav className="mobile-bottom-nav" aria-label="Мобильная навигация">
+        {navItems.map((item) => {
+          const isActive = currentPath === item.href;
 
-            return (
-              <AppLink
-                aria-current={isActive ? "page" : undefined}
-                className="header__nav-link"
-                key={item.href}
-                to={item.href}
-              >
-                <span className="header__nav-label">{item.label}</span>
-              </AppLink>
-            );
-          })}
-        </nav>
-
-        <a className="header__phone" href={contactInfo.phoneHref} aria-label="Позвонить">
-          <Phone size={18} />
-          <span>{contactInfo.phone}</span>
-        </a>
-      </div>
-    </header>
+          return (
+            <AppLink
+              aria-current={isActive ? "page" : undefined}
+              className="mobile-bottom-nav__link"
+              key={item.href}
+              to={item.href}
+            >
+              {item.label}
+            </AppLink>
+          );
+        })}
+      </nav>
+    </>
   );
 }
