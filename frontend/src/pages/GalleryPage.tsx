@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { SectionHeader } from "../components/SectionHeader";
 
@@ -21,6 +21,7 @@ export function GalleryPage() {
   const [visibleCount, setVisibleCount] = useState(pageSize);
   const [isLoading, setIsLoading] = useState(true);
   const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
+  const [isBrandMenuOpen, setIsBrandMenuOpen] = useState(false);
 
   useEffect(() => {
     fetch("/works-gallery/manifest.json")
@@ -96,6 +97,7 @@ export function GalleryPage() {
     setActiveSlug(slug);
     setVisibleCount(pageSize);
     setActiveImageIndex(null);
+    setIsBrandMenuOpen(false);
 
     const nextUrl = `/works?brand=${encodeURIComponent(slug)}`;
     window.history.replaceState({}, "", nextUrl);
@@ -167,18 +169,61 @@ export function GalleryPage() {
             </div>
           ) : (
             <div className="gallery-layout">
-            <aside className="gallery-brand-list" aria-label="Марки автомобилей">
-              {brands.map((brand) => (
+              <div className="gallery-brand-select">
+                <span>Выбрать авто</span>
                 <button
-                  className={activeSlug === brand.slug ? "gallery-brand is-active" : "gallery-brand"}
-                  key={brand.slug}
-                  onClick={() => selectBrand(brand.slug)}
+                  className="gallery-brand-select__trigger"
+                  onClick={() => setIsBrandMenuOpen((value) => !value)}
                   type="button"
+                  aria-expanded={isBrandMenuOpen}
                 >
-                  {brand.brand}
+                  {brands.find((brand) => brand.slug === activeSlug)?.brand ?? "Марка авто"}
+                  <ChevronDown size={18} />
                 </button>
-              ))}
-            </aside>
+
+                {isBrandMenuOpen ? (
+                  <div className="gallery-brand-select__menu">
+                    {brands.map((brand) => (
+                      <button
+                        className={
+                          activeSlug === brand.slug
+                            ? "gallery-brand-select__option is-active"
+                            : "gallery-brand-select__option"
+                        }
+                        key={brand.slug}
+                        onClick={() => selectBrand(brand.slug)}
+                        type="button"
+                      >
+                        {brand.brand}
+                      </button>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+
+              <label className="gallery-brand-select-native">
+                <span>Выбрать авто</span>
+                <select value={activeSlug} onChange={(event) => selectBrand(event.target.value)}>
+                  {brands.map((brand) => (
+                    <option value={brand.slug} key={brand.slug}>
+                      {brand.brand}
+                    </option>
+                  ))}
+                </select>
+              </label>
+
+              <aside className="gallery-brand-list" aria-label="Марки автомобилей">
+                {brands.map((brand) => (
+                  <button
+                    className={activeSlug === brand.slug ? "gallery-brand is-active" : "gallery-brand"}
+                    key={brand.slug}
+                    onClick={() => selectBrand(brand.slug)}
+                    type="button"
+                  >
+                    {brand.brand}
+                  </button>
+                ))}
+              </aside>
 
             <div className="gallery-results">
               <div className="gallery-results__head">
