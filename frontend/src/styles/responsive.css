@@ -272,12 +272,27 @@
 
   .showcase-card,
   .showcase-card--lead {
-    min-height: 260px;
+    min-height: 0;
+  }
+
+  .showcase-grid {
+    grid-auto-rows: 260px;
   }
 
   .work-archive-note {
-    align-items: flex-start;
-    flex-direction: column;
+    justify-content: stretch;
+  }
+
+  .work-archive-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .work-archive-actions .button {
+    width: 100%;
+    padding: 0 10px;
+    text-align: center;
   }
 
   .brands-section {
