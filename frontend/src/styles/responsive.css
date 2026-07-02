@@ -11,6 +11,10 @@
     padding-bottom: 76px;
   }
 
+  .scroll-top-button {
+    bottom: 92px;
+  }
+
   .header__descriptor {
     max-width: 230px;
   }
@@ -112,6 +116,13 @@
     min-height: 38px;
     padding: 0 6px;
     font-size: 12px;
+  }
+
+  .scroll-top-button {
+    right: 12px;
+    bottom: 84px;
+    width: 34px;
+    height: 34px;
   }
 
   .logo__text span {

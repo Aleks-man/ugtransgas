@@ -32,6 +32,16 @@
   transform: translateY(-2px);
 }
 
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+  transform: none;
+}
+
+.button:disabled:hover {
+  transform: none;
+}
+
 .button--primary {
   background: linear-gradient(135deg, var(--green-800), #ef2d34);
   color: white;

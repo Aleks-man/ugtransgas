@@ -1,3 +1,4 @@
+import { ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Header } from "./components/Header";
 import { Footer } from "./sections/Footer";
@@ -73,6 +74,14 @@ function App() {
       <Header currentPath={currentPath} />
       <main>{page}</main>
       <Footer />
+      <button
+        className="scroll-top-button"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        type="button"
+        aria-label="Наверх"
+      >
+        <ChevronUp size={18} />
+      </button>
     </>
   );
 }
