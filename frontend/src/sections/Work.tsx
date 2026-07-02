@@ -1,3 +1,4 @@
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { SectionHeader } from "../components/SectionHeader";
 
@@ -21,6 +22,7 @@ const featuredWorkSources = [
 
 export function Work() {
   const [images, setImages] = useState<WorkImage[]>([]);
+  const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
 
   useEffect(() => {
     fetch("/works-gallery/manifest.json")
@@ -41,6 +43,68 @@ export function Work() {
     return selected.length >= 4 ? selected : images.slice(0, 6);
   }, [images]);
 
+  const activeLightboxImage = activeImageIndex === null ? null : featuredImages[activeImageIndex];
+
+  useEffect(() => {
+    if (activeImageIndex === null) {
+      return;
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setActiveImageIndex(null);
+      }
+
+      if (event.key === "ArrowLeft") {
+        setActiveImageIndex((index) => {
+          if (index === null || featuredImages.length === 0) {
+            return index;
+          }
+
+          return index === 0 ? featuredImages.length - 1 : index - 1;
+        });
+      }
+
+      if (event.key === "ArrowRight") {
+        setActiveImageIndex((index) => {
+          if (index === null || featuredImages.length === 0) {
+            return index;
+          }
+
+          return index === featuredImages.length - 1 ? 0 : index + 1;
+        });
+      }
+    }
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [activeImageIndex, featuredImages.length]);
+
+  function showPreviousImage() {
+    setActiveImageIndex((index) => {
+      if (index === null || featuredImages.length === 0) {
+        return index;
+      }
+
+      return index === 0 ? featuredImages.length - 1 : index - 1;
+    });
+  }
+
+  function showNextImage() {
+    setActiveImageIndex((index) => {
+      if (index === null || featuredImages.length === 0) {
+        return index;
+      }
+
+      return index === featuredImages.length - 1 ? 0 : index + 1;
+    });
+  }
+
   return (
     <section className="section section--dark" id="work">
       <div className="container">
@@ -57,16 +121,15 @@ export function Work() {
 
         <div className="showcase-grid">
           {featuredImages.map((image, index) => (
-            <a
+            <button
               className={index === 0 ? "showcase-card showcase-card--lead" : "showcase-card"}
-              href={image.src}
-              target="_blank"
-              rel="noreferrer"
               key={image.src}
+              onClick={() => setActiveImageIndex(index)}
+              type="button"
             >
               <img src={image.src} alt={`Работа СТО ТрансГаз: ${image.brand}`} loading="lazy" />
               <span>{image.brand}</span>
-            </a>
+            </button>
           ))}
         </div>
 
@@ -82,6 +145,50 @@ export function Work() {
           </div>
         </div>
       </div>
+
+      {activeLightboxImage ? (
+        <div className="gallery-lightbox" onClick={() => setActiveImageIndex(null)} role="dialog" aria-modal="true">
+          <button
+            className="gallery-lightbox__button gallery-lightbox__nav gallery-lightbox__nav--prev"
+            onClick={(event) => {
+              event.stopPropagation();
+              showPreviousImage();
+            }}
+            type="button"
+            aria-label="Previous image"
+          >
+            <ChevronLeft size={38} />
+          </button>
+
+          <div className="gallery-lightbox__stage" onClick={(event) => event.stopPropagation()}>
+            <button
+              className="gallery-lightbox__button gallery-lightbox__close"
+              onClick={() => setActiveImageIndex(null)}
+              type="button"
+              aria-label="Close image"
+            >
+              <X size={28} />
+            </button>
+
+            <figure className="gallery-lightbox__figure">
+              <img src={activeLightboxImage.src} alt={activeLightboxImage.brand} />
+              <figcaption>{activeLightboxImage.brand}</figcaption>
+            </figure>
+          </div>
+
+          <button
+            className="gallery-lightbox__button gallery-lightbox__nav gallery-lightbox__nav--next"
+            onClick={(event) => {
+              event.stopPropagation();
+              showNextImage();
+            }}
+            type="button"
+            aria-label="Next image"
+          >
+            <ChevronRight size={38} />
+          </button>
+        </div>
+      ) : null}
     </section>
   );
 }
