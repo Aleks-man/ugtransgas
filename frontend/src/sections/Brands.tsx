@@ -1,3 +1,6 @@
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { type WheelEvent, useRef } from "react";
+import { AppLink } from "../components/AppLink";
 import { carBrands } from "../data/site";
 import cadillacLogo from "../assets/brand-logos/cadillac.png";
 import cheryLogo from "../assets/brand-logos/chery.png";
@@ -57,38 +60,89 @@ const brandLogoImages: Record<string, string> = {
   VOLKSWAGEN: volkswagenLogo,
 };
 
+function getBrandSlug(brand: string) {
+  return brand.toLowerCase();
+}
+
 function BrandLogo({ brand }: { brand: string }) {
   const logoImage = brandLogoImages[brand];
   const brandClass = `brand-logo brand-logo--${brand.toLowerCase()}`;
-
-  if (logoImage) {
-    return (
-      <div className={brandClass} aria-label={brand} title={brand}>
-        <img className="brand-logo__image" src={logoImage} alt="" aria-hidden="true" />
-        <span className="brand-logo__label">{brand}</span>
-      </div>
-    );
-  }
+  const href = `/works?brand=${getBrandSlug(brand)}`;
 
   return (
-    <div className={`${brandClass} brand-logo--fallback`} aria-label={brand} title={brand}>
-      <span className="brand-logo__label">{brand}</span>
-    </div>
+    <AppLink className={logoImage ? brandClass : `${brandClass} brand-logo--fallback`} to={href} aria-label={brand}>
+      {logoImage ? <img className="brand-logo__image" src={logoImage} alt="" aria-hidden="true" /> : brand}
+    </AppLink>
   );
 }
 
 export function Brands() {
+  const trackRef = useRef<HTMLDivElement | null>(null);
+
+  function scrollBrands(direction: -1 | 1) {
+    const track = trackRef.current;
+
+    if (!track) {
+      return;
+    }
+
+    track.scrollBy({
+      left: direction * Math.min(520, track.clientWidth * 0.78),
+      behavior: "smooth",
+    });
+  }
+
+  function handleWheel(event: WheelEvent<HTMLDivElement>) {
+    const track = trackRef.current;
+
+    if (!track) {
+      return;
+    }
+
+    const delta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
+
+    if (delta === 0) {
+      return;
+    }
+
+    event.preventDefault();
+    track.scrollBy({ left: delta, behavior: "smooth" });
+  }
+
   return (
     <section className="brands-section" aria-label="Марки автомобилей">
-      <div className="container brands-grid">
-        <div>
+      <div className="container brands-panel">
+        <div className="brands-head">
           <span className="eyebrow">Марки авто</span>
-          <h2>Устанавливаем ГБО на легковые и коммерческие автомобили</h2>
+          <h2>Основные марки авто, с которыми мы работаем</h2>
         </div>
-        <div className="brand-cloud">
-          {carBrands.map((brand) => (
-            <BrandLogo brand={brand} key={brand} />
-          ))}
+
+        <div className="brand-carousel">
+          <button
+            className="brand-carousel__arrow brand-carousel__arrow--prev"
+            onClick={() => scrollBrands(-1)}
+            type="button"
+            aria-label="Показать предыдущие марки"
+          >
+            <ChevronLeft size={22} />
+          </button>
+
+          <div className="brand-carousel__viewport">
+            <div className="brand-carousel__track" ref={trackRef} onWheel={handleWheel}>
+              {carBrands.map((brand) => (
+                <BrandLogo brand={brand} key={brand} />
+              ))}
+            </div>
+          </div>
+
+          <button
+            className="brand-carousel__arrow brand-carousel__arrow--next"
+            onClick={() => scrollBrands(1)}
+            type="button"
+            aria-label="Показать следующие марки"
+          >
+            <ChevronRight size={22} />
+          </button>
         </div>
       </div>
     </section>

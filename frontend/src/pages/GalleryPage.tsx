@@ -11,6 +11,10 @@ type WorkImage = {
 
 const pageSize = 18;
 
+function getRequestedBrandSlug() {
+  return new URLSearchParams(window.location.search).get("brand") ?? "";
+}
+
 export function GalleryPage() {
   const [images, setImages] = useState<WorkImage[]>([]);
   const [activeSlug, setActiveSlug] = useState<string>("");
@@ -22,8 +26,11 @@ export function GalleryPage() {
     fetch("/works-gallery/manifest.json")
       .then((response) => response.json())
       .then((items: WorkImage[]) => {
+        const requestedSlug = getRequestedBrandSlug();
+        const requestedBrandExists = items.some((image) => image.slug === requestedSlug);
+
         setImages(items);
-        setActiveSlug(items[0]?.slug ?? "");
+        setActiveSlug(requestedBrandExists ? requestedSlug : (items[0]?.slug ?? ""));
       })
       .catch(() => setImages([]))
       .finally(() => setIsLoading(false));
@@ -89,6 +96,9 @@ export function GalleryPage() {
     setActiveSlug(slug);
     setVisibleCount(pageSize);
     setActiveImageIndex(null);
+
+    const nextUrl = `/works?brand=${encodeURIComponent(slug)}`;
+    window.history.replaceState({}, "", nextUrl);
   }
 
   function showPreviousImage() {

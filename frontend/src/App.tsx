@@ -46,7 +46,7 @@ function App() {
       }
 
       event.preventDefault();
-      navigateTo(url.pathname);
+      navigateTo(`${url.pathname}${url.search}${url.hash}`);
     }
 
     document.addEventListener("click", handleDocumentClick);
