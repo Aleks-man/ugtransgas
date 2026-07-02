@@ -4,7 +4,9 @@ import { Footer } from "./sections/Footer";
 import { ContactsPage } from "./pages/ContactsPage";
 import { GalleryPage } from "./pages/GalleryPage";
 import { HomePage } from "./pages/HomePage";
+import { LegalPage } from "./pages/LegalPage";
 import { ServicesPage } from "./pages/ServicesPage";
+import { agreementDocument, privacyDocument } from "./data/legal";
 import { getCurrentPath, navigateTo, routes } from "./lib/navigation";
 import "./styles/index.css";
 
@@ -58,6 +60,10 @@ function App() {
       <GalleryPage />
     ) : currentPath === routes.contacts ? (
       <ContactsPage />
+    ) : currentPath === routes.privacy ? (
+      <LegalPage document={privacyDocument} />
+    ) : currentPath === routes.agreement ? (
+      <LegalPage document={agreementDocument} />
     ) : (
       <HomePage />
     );

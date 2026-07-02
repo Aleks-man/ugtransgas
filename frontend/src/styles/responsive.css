@@ -295,4 +295,24 @@
     align-items: flex-start;
     flex-direction: column;
   }
+
+  .footer__content {
+    justify-items: start;
+  }
+
+  .footer p {
+    text-align: left;
+  }
+
+  .footer__legal {
+    justify-content: flex-start;
+  }
+
+  .license-lightbox {
+    padding: 54px 14px 24px;
+  }
+
+  .license-lightbox__stage img {
+    max-height: 82vh;
+  }
 }

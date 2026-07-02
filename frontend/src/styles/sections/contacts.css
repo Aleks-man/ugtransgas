@@ -96,6 +96,30 @@
   resize: vertical;
 }
 
+.lead-form .form-consent {
+  grid-template-columns: 18px 1fr;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.lead-form .form-consent input {
+  width: 18px;
+  height: 18px;
+  margin: 1px 0 0;
+  padding: 0;
+  accent-color: var(--green-500);
+}
+
+.form-consent a {
+  color: var(--green-800);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .form-note {
   color: var(--muted);
   font-size: 13px;

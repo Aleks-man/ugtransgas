@@ -3,6 +3,8 @@ export const routes = {
   services: "/services",
   works: "/works",
   contacts: "/contacts",
+  privacy: "/privacy",
+  agreement: "/agreement",
 } as const;
 
 export function navigateTo(path: string) {

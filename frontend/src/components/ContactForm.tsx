@@ -1,4 +1,6 @@
 import { Send } from "lucide-react";
+import { routes } from "../lib/navigation";
+import { AppLink } from "./AppLink";
 
 export function ContactForm() {
   return (
@@ -19,13 +21,24 @@ export function ContactForm() {
         Что нужно сделать
         <textarea name="message" placeholder="Установка ГБО, диагностика, ТО..." />
       </label>
+      <label className="form-consent">
+        <input name="privacy" type="checkbox" required />
+        <span>
+          Я принимаю условия{" "}
+          <AppLink to={routes.privacy}>политики обработки персональных данных</AppLink>
+        </span>
+      </label>
+      <label className="form-consent">
+        <input name="agreement" type="checkbox" required />
+        <span>
+          Я принимаю условия{" "}
+          <AppLink to={routes.agreement}>пользовательского соглашения</AppLink>
+        </span>
+      </label>
       <button className="button button--primary" type="submit">
         <Send size={18} />
         Отправить заявку
       </button>
-      <p className="form-note">
-        Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности и пользовательским соглашением.
-      </p>
     </form>
   );
 }

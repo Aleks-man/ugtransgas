@@ -17,6 +17,7 @@ export function Header({ currentPath }: HeaderProps) {
       const activeLink = navRef.current?.querySelector<HTMLElement>('[aria-current="page"]');
 
       if (!activeLink) {
+        setIndicatorStyle({ width: 0, x: 0 });
         return;
       }
 
