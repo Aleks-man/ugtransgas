@@ -36,7 +36,7 @@ export function Services() {
             );
           })}
         </div>
-        <div className="benefits-strip">
+        <div className="benefits-strip" aria-label="Преимущества сервиса">
           {benefits.map((benefit) => {
             const Icon = benefit.icon;
             return (

@@ -1,8 +1,7 @@
-import { ExternalLink, MessageSquareQuote, Star } from "lucide-react";
+import { ExternalLink, Star } from "lucide-react";
 
 const yandexReviewsUrl = "https://yandex.ru/maps/org/transgaz/1060228721/reviews/";
-
-const reviewQuotes = [
+const reviewSnippets = [
   {
     author: "Виктория Ш.",
     text: "Быстро устранили неполадки в оборудовании. Объясняют все понятно, подробно.",
@@ -20,9 +19,6 @@ export function Reviews() {
         <div className="reviews-summary">
           <span className="eyebrow">Отзывы</span>
           <h2>4.8 в Яндекс Картах</h2>
-          <p>
-            Клиенты отмечают диагностику, скорость работы и понятные объяснения мастеров.
-          </p>
         </div>
 
         <div className="reviews-rating" aria-label="Рейтинг на Яндекс Картах">
@@ -34,18 +30,17 @@ export function Reviews() {
           <small>215 оценок на Яндекс Картах</small>
         </div>
 
-        <div className="reviews-quotes">
-          {reviewQuotes.map((review) => (
-            <article className="review-card" key={review.author}>
-              <MessageSquareQuote size={22} />
+        <div className="reviews-snippets">
+          {reviewSnippets.map((review) => (
+            <blockquote className="reviews-snippet" key={review.author}>
               <p>{review.text}</p>
-              <span>{review.author}</span>
-            </article>
+              <cite>{review.author}</cite>
+            </blockquote>
           ))}
         </div>
 
         <a className="button button--primary reviews-link" href={yandexReviewsUrl} target="_blank" rel="noreferrer">
-          Читать на Яндекс Картах
+          Читать далее
           <ExternalLink size={18} />
         </a>
       </div>

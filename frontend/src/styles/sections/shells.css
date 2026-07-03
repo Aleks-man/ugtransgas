@@ -1,4 +1,9 @@
-﻿#services {
+#services,
+.section {
+  padding: var(--section-y) 0;
+}
+
+#services {
   position: relative;
   overflow: hidden;
   background:
@@ -35,5 +40,3 @@
 .section--dark .section-header span {
   color: var(--green-300);
 }
-
-

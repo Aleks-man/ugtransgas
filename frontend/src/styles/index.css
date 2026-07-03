@@ -2,7 +2,6 @@
 @import "./header.css";
 @import "./buttons.css";
 @import "./sections/hero.css";
-@import "./sections/site-path.css";
 @import "./pages/page-hero.css";
 @import "./pages/legal-page.css";
 @import "./sections/shells.css";
@@ -14,7 +13,6 @@
 @import "./sections/process.css";
 @import "./sections/work-archive.css";
 @import "./sections/contacts.css";
-@import "./sections/engineering.css";
 @import "./sections/reviews.css";
 @import "./sections/estimate.css";
 @import "./sections/showcase-footer.css";

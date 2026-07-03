@@ -21,7 +21,6 @@
 
   .hero-grid,
   .page-hero__grid,
-  .engineering-grid,
   .estimate-panel,
   .process-grid,
   .contacts-grid,
@@ -41,10 +40,8 @@
   }
 
   .stats-row,
-  .site-path,
   .services-grid,
   .service-detail-grid,
-  .benefits-strip,
   .work-grid--gallery,
   .showcase-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -61,11 +58,7 @@
   }
 
   .reviews-panel {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .reviews-quotes {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .reviews-link {
@@ -227,11 +220,9 @@
   }
 
   .stats-row,
-  .site-path,
   .services-grid,
   .pricing-grid,
   .work-grid,
-  .benefits-strip,
   .service-detail-grid,
   .gallery-grid,
   .showcase-grid {
@@ -332,21 +323,11 @@
   }
 
   .reviews-section {
-    padding: 36px 0;
+    padding: 48px 0;
   }
 
-  .reviews-panel,
-  .reviews-quotes {
+  .reviews-panel {
     grid-template-columns: 1fr;
-  }
-
-  .engineering-copy h2 {
-    font-size: 36px;
-  }
-
-  .engineering-item {
-    grid-template-columns: 1fr;
-    gap: 12px;
   }
 
   .estimate-section {
@@ -387,7 +368,7 @@
   }
 
   .brands-section {
-    padding: 0 0 64px;
+    padding: 48px 0;
   }
 
   .brands-panel {
@@ -441,7 +422,7 @@
   }
 
   .section {
-    padding: 64px 0;
+    padding: 48px 0;
   }
 
   .contacts-grid {
