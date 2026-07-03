@@ -50,7 +50,7 @@ export function Footer() {
 
           <section className="footer__column" aria-label="Контакты">
             <h2>Контакты</h2>
-            <ul className="footer__links">
+            <ul className="footer__links footer__links--contacts">
               <li>
                 <Phone size={16} />
                 <a href={contactInfo.phoneHref}>{contactInfo.phone}</a>
@@ -76,7 +76,7 @@ export function Footer() {
 
           <section className="footer__column" aria-label="Адрес и документы">
             <h2>Адрес</h2>
-            <ul className="footer__links">
+            <ul className="footer__links footer__links--address">
               <li>
                 <MapPin size={16} />
                 <a href={contactInfo.route} target="_blank" rel="noreferrer">

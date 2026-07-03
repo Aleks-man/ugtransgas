@@ -13,6 +13,7 @@ import "./styles/index.css";
 
 function App() {
   const [currentPath, setCurrentPath] = useState(getCurrentPath);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
     function handleRouteChange() {
@@ -54,6 +55,17 @@ function App() {
     return () => document.removeEventListener("click", handleDocumentClick);
   }, []);
 
+  useEffect(() => {
+    function handleScroll() {
+      setShowScrollTop(window.scrollY > 360);
+    }
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const page =
     currentPath === routes.services ? (
       <ServicesPage />
@@ -74,14 +86,16 @@ function App() {
       <Header currentPath={currentPath} />
       <main>{page}</main>
       <Footer />
-      <button
-        className="scroll-top-button"
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        type="button"
-        aria-label="Наверх"
-      >
-        <ChevronUp size={18} />
-      </button>
+      {showScrollTop ? (
+        <button
+          className="scroll-top-button"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          type="button"
+          aria-label="Наверх"
+        >
+          <ChevronUp size={18} />
+        </button>
+      ) : null}
     </>
   );
 }
