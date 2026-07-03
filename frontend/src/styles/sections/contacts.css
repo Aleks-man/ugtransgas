@@ -102,13 +102,6 @@
   cursor: default;
 }
 
-.social-link--inactive:hover {
-  border-color: rgba(22, 22, 21, 0.12);
-  background: rgba(248, 240, 216, 0.78);
-  color: var(--green-950);
-  transform: none;
-}
-
 .lead-form {
   display: grid;
   gap: 14px;
@@ -169,8 +162,11 @@
 
 .form-consent a {
   color: var(--green-800);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none;
+}
+
+.form-consent a:hover {
+  color: var(--green-700);
 }
 
 .form-note {

@@ -79,27 +79,15 @@ export function Footer() {
             <ul className="footer__links">
               <li>
                 <MapPin size={16} />
-                <span>{contactInfo.address}</span>
+                <a href={contactInfo.route} target="_blank" rel="noreferrer">
+                  {contactInfo.address}
+                </a>
               </li>
               <li>
                 <Clock3 size={16} />
                 <span>{contactInfo.schedule}</span>
               </li>
-              <li>
-                <MapPin size={16} />
-                <a href={contactInfo.route} target="_blank" rel="noreferrer">
-                  Карта
-                </a>
-              </li>
             </ul>
-
-            <nav className="footer__legal" aria-label="Юридические документы">
-              <AppLink to={routes.privacy}>Политика</AppLink>
-              <AppLink to={routes.agreement}>Пользовательское соглашение</AppLink>
-              <button type="button" onClick={() => setIsLicenseOpen(true)}>
-                Лицензия
-              </button>
-            </nav>
           </section>
         </div>
 
@@ -108,6 +96,7 @@ export function Footer() {
           <span>ИНН 910228288877</span>
           <span>ОГРН 323911200099945</span>
           <AppLink to={routes.privacy}>Политика</AppLink>
+          <AppLink to={routes.agreement}>Пользовательское соглашение</AppLink>
           <button type="button" onClick={() => setIsLicenseOpen(true)}>
             Лицензии
           </button>
