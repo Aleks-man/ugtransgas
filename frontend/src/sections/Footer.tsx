@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { Maximize2, Minimize2, X } from "lucide-react";
+import { Clock3, Mail, MapPin, Maximize2, MessageCircle, Minimize2, Phone, Send, X } from "lucide-react";
 import { AppLink } from "../components/AppLink";
 import { Logo } from "../components/Logo";
+import { contactInfo } from "../data/site";
 import { routes } from "../lib/navigation";
 
 const licenseImageUrl = "https://ugtransgas.ru/image/license.jpg";
+const currentYear = new Date().getFullYear();
 
 export function Footer() {
   const [isLicenseOpen, setIsLicenseOpen] = useState(false);
@@ -39,19 +41,76 @@ export function Footer() {
     <>
       <footer className="footer">
         <div className="container footer__inner">
-          <Logo />
-          <div className="footer__content">
+          <section className="footer__brand" aria-label="СТО ТрансГаз">
+            <Logo />
             <p>
               СТО ТрансГаз: установка, обслуживание и оформление газобаллонного оборудования в Республике Крым.
             </p>
+          </section>
+
+          <section className="footer__column" aria-label="Контакты">
+            <h2>Контакты</h2>
+            <ul className="footer__links">
+              <li>
+                <Phone size={16} />
+                <a href={contactInfo.phoneHref}>{contactInfo.phone}</a>
+              </li>
+              <li>
+                <MessageCircle size={16} />
+                <a href={contactInfo.whatsapp} target="_blank" rel="noreferrer">
+                  WhatsApp
+                </a>
+              </li>
+              <li>
+                <Send size={16} />
+                <a href={contactInfo.telegram} target="_blank" rel="noreferrer">
+                  Telegram
+                </a>
+              </li>
+              <li>
+                <Mail size={16} />
+                <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+              </li>
+            </ul>
+          </section>
+
+          <section className="footer__column" aria-label="Адрес и документы">
+            <h2>Адрес</h2>
+            <ul className="footer__links">
+              <li>
+                <MapPin size={16} />
+                <span>{contactInfo.address}</span>
+              </li>
+              <li>
+                <Clock3 size={16} />
+                <span>{contactInfo.schedule}</span>
+              </li>
+              <li>
+                <MapPin size={16} />
+                <a href={contactInfo.route} target="_blank" rel="noreferrer">
+                  Карта
+                </a>
+              </li>
+            </ul>
+
             <nav className="footer__legal" aria-label="Юридические документы">
-              <AppLink to={routes.privacy}>Политика обработки данных</AppLink>
+              <AppLink to={routes.privacy}>Политика</AppLink>
               <AppLink to={routes.agreement}>Пользовательское соглашение</AppLink>
               <button type="button" onClick={() => setIsLicenseOpen(true)}>
                 Лицензия
               </button>
             </nav>
-          </div>
+          </section>
+        </div>
+
+        <div className="container footer__bottom">
+          <span>© {currentYear} СТО ТрансГаз</span>
+          <span>ИНН 910228288877</span>
+          <span>ОГРН 323911200099945</span>
+          <AppLink to={routes.privacy}>Политика</AppLink>
+          <button type="button" onClick={() => setIsLicenseOpen(true)}>
+            Лицензии
+          </button>
         </div>
       </footer>
 
