@@ -97,8 +97,8 @@
   }
 
   .footer__links--contacts {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px 14px;
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .footer__links li,
@@ -114,7 +114,7 @@
   }
 
   .footer__links--contacts li {
-    justify-self: stretch;
+    justify-self: center;
   }
 
   .footer__links--address li {

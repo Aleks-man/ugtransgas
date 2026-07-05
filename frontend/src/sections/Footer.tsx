@@ -56,10 +56,8 @@ export function Footer() {
                 <a href={contactInfo.phoneHref}>{contactInfo.phone}</a>
               </li>
               <li>
-                <MessageCircle size={16} />
-                <a href={contactInfo.whatsapp} target="_blank" rel="noreferrer">
-                  WhatsApp
-                </a>
+                <Mail size={16} />
+                <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
               </li>
               <li>
                 <Send size={16} />
@@ -68,8 +66,10 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <Mail size={16} />
-                <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+                <MessageCircle size={16} />
+                <a href={contactInfo.whatsapp} target="_blank" rel="noreferrer">
+                  WhatsApp
+                </a>
               </li>
             </ul>
           </section>
