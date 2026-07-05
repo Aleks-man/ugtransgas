@@ -28,7 +28,7 @@ function InstagramIcon() {
 
 export function Contacts() {
   return (
-    <section className="section contacts-section" id="contacts">
+    <section className="section contacts-section section--soft-divider" id="contacts">
       <div className="container contacts-grid">
         <div className="contact-copy">
           <span className="eyebrow">Заявка</span>

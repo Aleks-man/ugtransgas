@@ -1,10 +1,22 @@
 #services,
 .section {
+  position: relative;
   padding: var(--section-y) 0;
 }
 
+.section--soft-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(760px, calc(100% - 48px));
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgba(255, 242, 0, 0.46), transparent);
+  pointer-events: none;
+}
+
 #services {
-  position: relative;
   overflow: hidden;
   background:
     linear-gradient(180deg, rgba(222, 211, 184, 0.82) 0%, rgba(222, 211, 184, 0.58) 28%, rgba(235, 224, 196, 0.56) 72%, rgba(235, 224, 196, 0.84) 100%),

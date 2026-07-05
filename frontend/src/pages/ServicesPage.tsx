@@ -32,7 +32,7 @@ export function ServicesPage() {
         </div>
       </section>
 
-      <section className="section service-detail-section">
+      <section className="section service-detail-section section--soft-divider">
         <div className="container">
           <SectionHeader
             eyebrow="Направления"

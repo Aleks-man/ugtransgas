@@ -143,7 +143,7 @@ export function GalleryPage() {
         </div>
       </section>
 
-      <section className="section gallery-page-section">
+      <section className="section gallery-page-section section--soft-divider">
         <div className="container">
           <SectionHeader
             eyebrow="Марки"

@@ -17,7 +17,7 @@ export function LegalPage({ document }: LegalPageProps) {
         </div>
       </section>
 
-      <section className="section legal-section">
+      <section className="section legal-section section--soft-divider">
         <div className="container legal-layout">
           <AppLink className="legal-back button button--ghost" to="/">
             <ArrowLeft size={18} />
