@@ -1,5 +1,5 @@
 import { Phone } from "lucide-react";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { contactInfo, navItems } from "../data/site";
 import { AppLink } from "./AppLink";
 import { Logo } from "./Logo";
@@ -11,6 +11,7 @@ type HeaderProps = {
 export function Header({ currentPath }: HeaderProps) {
   const navRef = useRef<HTMLElement | null>(null);
   const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, x: 0 });
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useLayoutEffect(() => {
     function updateIndicator() {
@@ -32,9 +33,20 @@ export function Header({ currentPath }: HeaderProps) {
     return () => window.removeEventListener("resize", updateIndicator);
   }, [currentPath]);
 
+  useEffect(() => {
+    function handleScroll() {
+      setIsScrolled(window.scrollY > 48);
+    }
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      <header className="site-header">
+      <header className={isScrolled ? "site-header is-scrolled" : "site-header"}>
         <div className="container header__inner">
           <div className="header__brand">
             <AppLink className="header__logo-link" to="/" aria-label="СТО ТрансГаз">

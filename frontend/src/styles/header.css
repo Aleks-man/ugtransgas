@@ -13,6 +13,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 22px;
+  transition: min-height 180ms ease;
 }
 
 .header__brand {
@@ -40,6 +41,7 @@
   align-items: center;
   gap: 0;
   min-width: max-content;
+  transition: gap 220ms ease;
 }
 
 .logo__mark {
@@ -53,6 +55,12 @@
   border-radius: 0;
   background: transparent;
   box-shadow: none;
+  transition:
+    width 180ms ease,
+    height 180ms ease,
+    flex-basis 180ms ease,
+    opacity 160ms ease,
+    transform 180ms ease;
 }
 
 .logo__mark img {

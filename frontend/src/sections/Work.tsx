@@ -114,27 +114,37 @@ export function Work() {
           text="Показываем монтажные решения на разных автомобилях: аккуратное размещение оборудования, доступ к узлам и чистый результат после выдачи."
         />
         <div className="work-meta">
-          <span>более 600 фотографий выполненных работ</span>
-          <span>22 марки автомобилей</span>
-          <span>галерея по маркам</span>
+          <span>1000+ установок ГБО</span>
+          <span>более 20 марок автомобилей</span>
         </div>
 
         <div className="showcase-grid">
           {featuredImages.map((image, index) => (
             <button
-              className={index === 0 ? "showcase-card showcase-card--lead" : "showcase-card"}
+              className={
+                index === 0
+                  ? "showcase-card showcase-card--lead"
+                  : "showcase-card"
+              }
               key={image.src}
               onClick={() => setActiveImageIndex(index)}
               type="button"
             >
-              <img src={image.src} alt={`Работа СТО ТрансГаз: ${image.brand}`} loading="lazy" />
+              <img
+                src={image.src}
+                alt={`Работа СТО ТрансГаз: ${image.brand}`}
+                loading="lazy"
+              />
               <span>{image.brand}</span>
             </button>
           ))}
         </div>
 
         <div className="work-archive-note">
-          <p>В галерее можно выбрать марку автомобиля и посмотреть больше примеров монтажа на похожих машинах.</p>
+          <p>
+            В галерее можно выбрать марку автомобиля и посмотреть больше
+            примеров монтажа на похожих машинах.
+          </p>
           <div className="work-archive-actions">
             <a className="button button--primary" href="/works">
               Смотреть галерею
@@ -147,7 +157,12 @@ export function Work() {
       </div>
 
       {activeLightboxImage ? (
-        <div className="gallery-lightbox" onClick={() => setActiveImageIndex(null)} role="dialog" aria-modal="true">
+        <div
+          className="gallery-lightbox"
+          onClick={() => setActiveImageIndex(null)}
+          role="dialog"
+          aria-modal="true"
+        >
           <button
             className="gallery-lightbox__button gallery-lightbox__nav gallery-lightbox__nav--prev"
             onClick={(event) => {
@@ -160,7 +175,10 @@ export function Work() {
             <ChevronLeft size={38} />
           </button>
 
-          <div className="gallery-lightbox__stage" onClick={(event) => event.stopPropagation()}>
+          <div
+            className="gallery-lightbox__stage"
+            onClick={(event) => event.stopPropagation()}
+          >
             <button
               className="gallery-lightbox__button gallery-lightbox__close"
               onClick={() => setActiveImageIndex(null)}
@@ -171,7 +189,10 @@ export function Work() {
             </button>
 
             <figure className="gallery-lightbox__figure">
-              <img src={activeLightboxImage.src} alt={activeLightboxImage.brand} />
+              <img
+                src={activeLightboxImage.src}
+                alt={activeLightboxImage.brand}
+              />
               <figcaption>{activeLightboxImage.brand}</figcaption>
             </figure>
           </div>
