@@ -85,7 +85,7 @@ export const serviceDetails = [
 
 export const benefits = [
   {
-    title: "Сохраняем багажник и геометрию",
+    title: "Сохраняем полезное пространство багажника",
     icon: Car,
   },
   {
