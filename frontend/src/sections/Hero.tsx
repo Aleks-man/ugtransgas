@@ -1,7 +1,7 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import heroImage from "../assets/hero-workshop-brand.jpg";
-import { accents, stats } from "../data/site";
+import { stats } from "../data/site";
 
 export function Hero() {
   return (
@@ -67,15 +67,6 @@ export function Hero() {
             <span>{item.label}</span>
           </div>
         ))}
-        {accents.map((item) => {
-          const Icon = item.icon;
-          return (
-            <div className="stat stat--soft" key={item.label}>
-              <Icon size={20} />
-              <span>{item.label}</span>
-            </div>
-          );
-        })}
       </div>
     </section>
   );

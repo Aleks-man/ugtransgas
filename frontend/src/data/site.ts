@@ -6,7 +6,6 @@ import {
   Gauge,
   Headphones,
   ShieldCheck,
-  Sparkles,
   Wrench,
 } from "lucide-react";
 
@@ -33,8 +32,8 @@ export const contactInfo = {
 
 export const stats = [
   { value: "12+", label: "лет опыта" },
-  { value: "100%", label: "гарантия на товар" },
-  { value: "2 года", label: "гарантия в популярных комплектах" },
+  { value: "1000+", label: "установок ГБО" },
+  { value: "до 2 лет", label: "гарантия " },
 ];
 
 export const services = [
@@ -136,15 +135,4 @@ export const gallery = [
   "Диагностика и настройка оборудования",
   "Работа с газовой магистралью",
   "Проверка узлов после установки",
-];
-
-export const accents = [
-  {
-    label: "Экономия без потери контроля",
-    icon: Sparkles,
-  },
-  {
-    label: "Герметичность проверяется на каждом этапе",
-    icon: ShieldCheck,
-  },
 ];

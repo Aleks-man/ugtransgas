@@ -209,31 +209,37 @@ h3 {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(8px, 1.4vw, 14px);
+  width: min(100%, 780px);
   margin-top: 24px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .stat {
   display: grid;
   gap: 4px;
-  min-height: 104px;
+  min-height: clamp(74px, 9vw, 104px);
   align-content: center;
-  padding: 18px;
+  padding: clamp(10px, 1.8vw, 18px);
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(248, 240, 216, 0.82);
+  text-align: center;
 }
 
 .stat strong {
   color: var(--green-950);
-  font-size: 29px;
+  font-size: clamp(20px, 3.2vw, 29px);
   line-height: 1;
 }
 
 .stat span {
   color: var(--muted);
+  font-size: clamp(11px, 1.5vw, 15px);
   font-weight: 700;
+  line-height: 1.22;
 }
 
 .stat--soft {
