@@ -25,9 +25,9 @@
   --text: #34322e;
   --muted: #766f5f;
   --shadow: 0 24px 70px rgba(22, 22, 21, 0.16);
-  --section-y: 92px;
-  --section-y-compact: 72px;
-  --section-y-large: 108px;
+  --section-y: 68px;
+  --section-y-compact: 54px;
+  --section-y-large: 84px;
 }
 
 * {
