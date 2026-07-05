@@ -28,14 +28,14 @@
 
 .brands-copy h2 {
   margin: 0;
-  color: var(--green-950);
+  color: var(--ink-950);
   font-size: clamp(24px, 2.8vw, 34px);
   line-height: 1.08;
 }
 
 .brands-copy p {
   max-width: 720px;
-  color: var(--muted);
+  color: var(--text-muted);
   font-size: 17px;
 }
 

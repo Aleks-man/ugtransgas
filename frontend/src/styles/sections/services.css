@@ -1,4 +1,4 @@
-﻿.section-header {
+.section-header {
   display: grid;
   max-width: 780px;
   gap: 14px;
@@ -13,7 +13,7 @@
   align-items: end;
   margin-bottom: 18px;
   border-radius: 8px;
-  background: var(--green-950);
+  background: var(--ink-950);
   box-shadow: var(--shadow);
   isolation: isolate;
 }
@@ -45,7 +45,7 @@
 }
 
 .equipment-band__content span {
-  color: var(--green-500);
+  color: var(--brand-yellow);
   font-size: 13px;
   font-weight: 900;
   text-transform: uppercase;
@@ -88,7 +88,7 @@
 .service-card p,
 .work-card p,
 .price-card p {
-  color: var(--muted);
+  color: var(--text-muted);
 }
 
 .icon-badge {
@@ -98,7 +98,7 @@
   place-items: center;
   border-radius: 8px;
   background: var(--mint);
-  color: var(--green-700);
+  color: var(--brand-red-dark);
 }
 
 .benefits-strip {
@@ -118,14 +118,14 @@
   border: 0;
   border-radius: 0;
   background: transparent;
-  color: var(--green-900);
+  color: var(--ink-900);
   font-size: 14px;
   font-weight: 800;
 }
 
 .benefit svg {
   flex: 0 0 auto;
-  color: var(--green-700);
+  color: var(--brand-red-dark);
 }
 
 

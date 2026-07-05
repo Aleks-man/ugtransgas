@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   color: #242321;
   background: #ded3b8;
   font-family:
@@ -8,12 +8,12 @@
   line-height: 1.5;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  --green-950: #161615;
-  --green-900: #242321;
-  --green-800: #d71920;
-  --green-700: #b81118;
-  --green-500: #fff200;
-  --green-300: #fff690;
+  --ink-950: #161615;
+  --ink-900: #242321;
+  --brand-red: #d71920;
+  --brand-red-dark: #b81118;
+  --brand-yellow: #fff200;
+  --brand-yellow-soft: #fff690;
   --lime: #fff200;
   --mint: #efe087;
   --paper: #f8f0d8;
@@ -23,7 +23,8 @@
   --surface-deep: #d3c49f;
   --line: #c7b98f;
   --text: #34322e;
-  --muted: #766f5f;
+  --text-muted: #5f594c;
+  --muted: var(--text-muted);
   --shadow: 0 24px 70px rgba(22, 22, 21, 0.16);
   --section-y: 68px;
   --section-y-compact: 54px;

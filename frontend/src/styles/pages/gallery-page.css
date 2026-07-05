@@ -1,4 +1,4 @@
-﻿.gallery-page-section {
+.gallery-page-section {
   background:
     linear-gradient(180deg, rgba(222, 211, 184, 0.82) 0%, rgba(222, 211, 184, 0.56) 24%, rgba(235, 224, 196, 0.54) 76%, rgba(235, 224, 196, 0.84) 100%),
     linear-gradient(90deg, rgba(248, 240, 216, 0.66), rgba(248, 240, 216, 0.42)),
@@ -33,7 +33,7 @@
 }
 
 .gallery-brand-select span {
-  color: var(--green-950);
+  color: var(--ink-950);
   font-size: 13px;
   font-weight: 900;
 }
@@ -61,7 +61,7 @@
 }
 
 .gallery-brand-select__trigger:focus {
-  border-color: var(--green-500);
+  border-color: var(--brand-yellow);
   box-shadow: 0 0 0 4px rgba(255, 242, 0, 0.28);
 }
 
@@ -137,7 +137,7 @@
 }
 
 .gallery-results__head span {
-  color: var(--muted);
+  color: var(--text-muted);
   font-weight: 850;
 }
 
@@ -271,7 +271,7 @@
   padding: 0;
   border: 1px solid rgba(255, 253, 243, 0.36);
   border-radius: 999px;
-  background: var(--green-500);
+  background: var(--brand-yellow);
   color: var(--text);
   cursor: pointer;
   line-height: 0;
@@ -283,7 +283,7 @@
 }
 
 .gallery-lightbox__button:hover {
-  background: var(--green-300);
+  background: var(--brand-yellow-soft);
   box-shadow: 0 12px 34px rgba(0, 0, 0, 0.44);
   color: var(--text);
 }

@@ -1,4 +1,4 @@
-﻿.work-grid {
+.work-grid {
   grid-template-columns: repeat(3, 1fr);
 }
 
@@ -44,9 +44,9 @@
 
 .brand-filter__item:hover,
 .brand-filter__item.is-active {
-  border-color: var(--green-500);
-  background: var(--green-500);
-  color: var(--green-950);
+  border-color: var(--brand-yellow);
+  background: var(--brand-yellow);
+  color: var(--ink-950);
 }
 
 .work-card {
@@ -93,7 +93,7 @@
   margin: 28px auto 0;
   border-color: rgba(255, 242, 0, 0.32);
   background: rgba(255, 255, 255, 0.08);
-  color: var(--green-500);
+  color: var(--brand-yellow);
 }
 
 

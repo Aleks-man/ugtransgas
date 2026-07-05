@@ -1,4 +1,4 @@
-﻿.hero-section {
+.hero-section {
   position: relative;
   overflow: hidden;
   padding: 52px 0 34px;
@@ -60,7 +60,7 @@
 }
 
 .hero-copy .eyebrow {
-  color: var(--green-500);
+  color: var(--brand-yellow);
 }
 
 .hero-copy h1 {
@@ -80,7 +80,7 @@
 
 .eyebrow,
 .section-header span {
-  color: var(--green-700);
+  color: var(--brand-red-dark);
   font-size: 13px;
   font-weight: 900;
   letter-spacing: 0;
@@ -96,21 +96,21 @@ p {
 
 h1 {
   max-width: 780px;
-  color: var(--green-950);
+  color: var(--ink-950);
   font-size: clamp(42px, 5.4vw, 68px);
   line-height: 1;
   overflow-wrap: break-word;
 }
 
 h2 {
-  color: var(--green-950);
+  color: var(--ink-950);
   font-size: clamp(30px, 3.6vw, 48px);
   line-height: 1.06;
   overflow-wrap: break-word;
 }
 
 h3 {
-  color: var(--green-950);
+  color: var(--ink-950);
   font-size: 22px;
   line-height: 1.15;
 }
@@ -118,7 +118,7 @@ h3 {
 .hero-copy p,
 .section-header p,
 .contact-copy p {
-  color: var(--muted);
+  color: var(--text-muted);
   font-size: 18px;
 }
 
@@ -146,7 +146,7 @@ h3 {
 
 .hero-trust svg {
   flex: 0 0 auto;
-  color: var(--green-500);
+  color: var(--brand-yellow);
 }
 
 .hero-visual {
@@ -195,7 +195,7 @@ h3 {
 
 .hero-card strong {
   display: block;
-  color: var(--green-700);
+  color: var(--brand-red-dark);
   font-size: 42px;
   line-height: 1;
 }
@@ -230,13 +230,13 @@ h3 {
 }
 
 .stat strong {
-  color: var(--green-950);
+  color: var(--ink-950);
   font-size: clamp(20px, 3.2vw, 29px);
   line-height: 1;
 }
 
 .stat span {
-  color: var(--muted);
+  color: var(--text-muted);
   font-size: clamp(11px, 1.5vw, 15px);
   font-weight: 700;
   line-height: 1.22;
@@ -245,11 +245,9 @@ h3 {
 .stat--soft {
   align-items: center;
   grid-template-columns: auto 1fr;
-  color: var(--green-800);
+  color: var(--brand-red);
 }
 
 .stat--soft span {
-  color: var(--green-900);
+  color: var(--ink-900);
 }
-
-

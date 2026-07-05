@@ -1,4 +1,4 @@
-﻿.contacts-section {
+.contacts-section {
   background:
     linear-gradient(180deg, rgba(235, 224, 196, 0.84) 0%, rgba(235, 224, 196, 0.56) 24%, rgba(248, 240, 216, 0.54) 76%, rgba(248, 240, 216, 0.86) 100%),
     linear-gradient(90deg, rgba(248, 240, 216, 0.66), rgba(248, 240, 216, 0.42)),
@@ -29,7 +29,7 @@
   grid-template-columns: 24px 1fr;
   align-items: flex-start;
   gap: 12px;
-  color: var(--green-900);
+  color: var(--ink-900);
   font-weight: 800;
 }
 
@@ -38,7 +38,7 @@
   width: 22px;
   height: 22px;
   margin-top: 1px;
-  color: var(--green-800);
+  color: var(--brand-red);
 }
 
 .contact-list a {
@@ -46,7 +46,7 @@
 }
 
 .contact-list a:hover {
-  color: var(--green-800);
+  color: var(--brand-red);
 }
 
 .messenger-block {
@@ -56,7 +56,7 @@
 }
 
 .messenger-block > span {
-  color: var(--muted);
+  color: var(--text-muted);
   font-size: 13px;
   font-weight: 900;
   text-transform: uppercase;
@@ -76,7 +76,7 @@
   border: 1px solid rgba(22, 22, 21, 0.12);
   border-radius: 999px;
   background: rgba(248, 240, 216, 0.78);
-  color: var(--green-950);
+  color: var(--ink-950);
   box-shadow: 0 10px 24px rgba(22, 22, 21, 0.08);
   transition:
     background 180ms ease,
@@ -94,7 +94,7 @@
 .social-link:hover {
   border-color: rgba(215, 25, 32, 0.34);
   background: rgba(255, 242, 0, 0.14);
-  color: var(--green-800);
+  color: var(--brand-red);
   transform: translateY(-1px);
 }
 
@@ -115,7 +115,7 @@
 .lead-form label {
   display: grid;
   gap: 8px;
-  color: var(--green-950);
+  color: var(--ink-950);
   font-size: 14px;
   font-weight: 900;
 }
@@ -126,7 +126,7 @@
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
-  color: var(--green-950);
+  color: var(--ink-950);
   font-size: 16px;
   outline: none;
   padding: 14px 15px;
@@ -134,7 +134,7 @@
 
 .lead-form input:focus,
 .lead-form textarea:focus {
-  border-color: var(--green-500);
+  border-color: var(--brand-yellow);
   box-shadow: 0 0 0 4px rgba(255, 242, 0, 0.28);
 }
 
@@ -147,7 +147,7 @@
   grid-template-columns: 18px 1fr;
   align-items: flex-start;
   gap: 10px;
-  color: var(--muted);
+  color: var(--text-muted);
   font-size: 13px;
   font-weight: 700;
   line-height: 1.35;
@@ -158,20 +158,20 @@
   height: 18px;
   margin: 1px 0 0;
   padding: 0;
-  accent-color: var(--green-500);
+  accent-color: var(--brand-yellow);
 }
 
 .form-consent a {
-  color: var(--green-800);
+  color: var(--brand-red);
   text-decoration: none;
 }
 
 .form-consent a:hover {
-  color: var(--green-700);
+  color: var(--brand-red-dark);
 }
 
 .form-note {
-  color: var(--muted);
+  color: var(--text-muted);
   font-size: 13px;
 }
 

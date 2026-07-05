@@ -1,4 +1,4 @@
-﻿.reviews-section {
+.reviews-section {
   padding: var(--section-y) 0;
   background: var(--page-bg);
 }
@@ -25,7 +25,7 @@
 }
 
 .reviews-summary h2 {
-  color: var(--green-950);
+  color: var(--ink-950);
   font-size: clamp(26px, 3vw, 38px);
   line-height: 1;
 }
@@ -46,7 +46,7 @@
 }
 
 .reviews-snippet cite {
-  color: var(--muted);
+  color: var(--text-muted);
   font-size: 12px;
   font-style: normal;
   font-weight: 900;
@@ -70,7 +70,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--green-500);
+  color: var(--brand-yellow);
 }
 
 .reviews-rating__score strong {

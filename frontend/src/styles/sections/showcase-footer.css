@@ -1,4 +1,4 @@
-﻿.services-grid {
+.services-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
@@ -177,7 +177,7 @@
 
 .footer__links svg {
   margin-top: 2px;
-  color: var(--green-500);
+  color: var(--brand-yellow);
   stroke-width: 2.4;
 }
 
@@ -199,7 +199,7 @@
 .footer__links a:hover,
 .footer__bottom a:hover,
 .footer__bottom button:hover {
-  color: var(--green-500);
+  color: var(--brand-yellow);
 }
 
 .footer__bottom {

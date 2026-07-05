@@ -1,4 +1,4 @@
-﻿.service-detail-section {
+.service-detail-section {
   background:
     linear-gradient(180deg, rgba(222, 211, 184, 0.78) 0%, rgba(222, 211, 184, 0.48) 48%, rgba(222, 211, 184, 0.78) 100%),
     linear-gradient(90deg, rgba(248, 240, 216, 0.58), rgba(248, 240, 216, 0.32)),
@@ -24,12 +24,12 @@
 }
 
 .service-detail-card h3 {
-  color: var(--green-950);
+  color: var(--ink-950);
   font-size: 24px;
 }
 
 .service-detail-card p {
-  color: var(--muted);
+  color: var(--text-muted);
 }
 
 .service-detail-card ul {
@@ -50,7 +50,7 @@
 
 .service-detail-card svg {
   flex: 0 0 auto;
-  color: var(--green-800);
+  color: var(--brand-red);
 }
 
 

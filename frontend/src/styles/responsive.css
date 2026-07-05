@@ -1,4 +1,4 @@
-﻿@media (max-width: 1040px) {
+@media (max-width: 1040px) {
   .header__nav {
     display: none;
   }
@@ -204,7 +204,7 @@
   }
 
   .logo__text strong {
-    color: var(--green-500);
+    color: var(--brand-yellow);
     font-size: 16px;
     line-height: 1;
   }

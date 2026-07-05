@@ -1,4 +1,4 @@
-﻿.icon-link,
+.icon-link,
 .button {
   display: inline-flex;
   min-height: 46px;
@@ -18,8 +18,8 @@
 .icon-link {
   padding: 0 16px;
   border-color: rgba(255, 242, 0, 0.36);
-  background: var(--green-500);
-  color: var(--green-950);
+  background: var(--brand-yellow);
+  color: var(--ink-950);
   box-shadow: 0 12px 28px rgba(255, 242, 0, 0.14);
 }
 
@@ -43,7 +43,7 @@
 }
 
 .button--primary {
-  background: linear-gradient(135deg, var(--green-800), #ef2d34);
+  background: linear-gradient(135deg, var(--brand-red), #ef2d34);
   color: white;
   box-shadow: 0 16px 34px rgba(215, 25, 32, 0.24);
 }
@@ -51,13 +51,13 @@
 .button--ghost {
   border-color: var(--line);
   background: rgba(255, 253, 247, 0.8);
-  color: var(--green-900);
+  color: var(--ink-900);
 }
 
 .button--full {
   width: 100%;
   border-color: rgba(215, 25, 32, 0.2);
   background: var(--mint);
-  color: var(--green-900);
+  color: var(--ink-900);
 }
 
