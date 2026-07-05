@@ -136,12 +136,9 @@
     width: min(100% - 28px, 1180px);
   }
 
-  .site-header {
-    position: static;
-  }
-
   .header__inner {
-    min-height: 86px;
+    min-height: 58px;
+    gap: 12px;
   }
 
   .header__descriptor {
@@ -149,7 +146,13 @@
   }
 
   .header__phone {
+    gap: 6px;
     font-size: 13px;
+  }
+
+  .header__phone svg {
+    width: 15px;
+    height: 15px;
   }
 
   .mobile-bottom-nav {
@@ -171,18 +174,31 @@
     height: 34px;
   }
 
+  .logo__mark {
+    display: none;
+  }
+
+  .logo__text--fallback {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: nowrap;
+  }
+
+  .logo__text strong {
+    color: var(--green-500);
+    font-size: 16px;
+    line-height: 1;
+  }
+
   .logo__text span {
     display: none;
   }
 
-  .logo__mark {
-    width: 88px;
-    height: 76px;
-    flex-basis: 88px;
-  }
-
   .hero-section {
-    padding-top: 42px;
+    padding-top: 32px;
   }
 
   h1 {
@@ -191,7 +207,7 @@
   }
 
   .hero-copy {
-    gap: 18px;
+    gap: 16px;
   }
 
   .hero-copy h1 {
@@ -202,7 +218,7 @@
 
   .hero-visual,
   .hero-visual img {
-    min-height: 360px;
+    min-height: 320px;
   }
 
   .hero-trust {
@@ -323,7 +339,7 @@
   }
 
   .reviews-section {
-    padding: 48px 0;
+    padding: 36px 0;
   }
 
   .reviews-panel {
@@ -368,7 +384,7 @@
   }
 
   .brands-section {
-    padding: 48px 0;
+    padding: 36px 0;
   }
 
   .brands-panel {
@@ -408,7 +424,7 @@
   }
 
   .equipment-band {
-    min-height: 420px;
+    min-height: 340px;
   }
 
   .equipment-band::after {
@@ -418,15 +434,15 @@
   }
 
   .equipment-band__content {
-    padding: 24px;
+    padding: 20px;
   }
 
   .section {
-    padding: 48px 0;
+    padding: 36px 0;
   }
 
   .contacts-grid {
-    gap: 28px;
+    gap: 22px;
   }
 
   .timeline-item {
