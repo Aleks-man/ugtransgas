@@ -73,8 +73,12 @@
     grid-row: span 1;
   }
 
-  .brand-carousel__track {
-    grid-auto-columns: clamp(112px, 18vw, 148px);
+  .brands-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .brands-actions {
+    justify-content: flex-start;
   }
 }
 
@@ -392,35 +396,14 @@
     padding: 18px;
   }
 
-  .brand-carousel {
-    grid-template-columns: 34px minmax(0, 1fr) 34px;
-    gap: 7px;
+  .brands-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: stretch;
   }
 
-  .brand-carousel__arrow {
-    width: 34px;
-    height: 34px;
-  }
-
-  .brand-carousel__track {
-    grid-auto-columns: minmax(108px, 40%);
-    padding-right: 28px;
-    scroll-padding-inline: 28px;
-  }
-
-  .brand-carousel__viewport::before,
-  .brand-carousel__viewport::after {
-    width: 26px;
-  }
-
-  .brand-logo {
-    min-height: 78px;
-    padding: 10px;
-  }
-
-  .brand-logo__image {
-    width: min(96px, 100%);
-    height: 54px;
+  .brands-actions .button {
+    width: 100%;
   }
 
   .equipment-band {
