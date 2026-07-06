@@ -10,13 +10,13 @@ type WorkImage = {
 };
 
 const featuredWorkSources = [
-  "/works-gallery/hyundai/hyundai-034.jpg",
+  "/works-gallery/hyundai/hyundai-040.jpg",
   "/works-gallery/geely/geely-006.jpg",
   "/works-gallery/infiniti/infiniti-012.jpg",
   "/works-gallery/kia/kia-023.jpg",
   "/works-gallery/ford/ford-013.jpg",
   "/works-gallery/chevrolet/chevrolet-014.jpg",
-  "/works-gallery/hyundai/hyundai-040.jpg",
+  "/works-gallery/renault/renault-043.jpg",
   "/works-gallery/kia/kia-026.jpg",
 ];
 
