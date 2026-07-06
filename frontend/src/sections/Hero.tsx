@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import heroImage from "../assets/hero-workshop-brand.jpg";
 import { stats } from "../data/site";
@@ -13,9 +13,10 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="eyebrow">
-            СТО «ТрансГаз» — установка ГБО в Крыму
-          </span>
+          <div className="hero-brand-kicker">
+            <span>СТО «ТрансГаз»</span>
+            <strong>Установка ГБО в Крыму</strong>
+          </div>
           <h1>
             Профессиональная установка ГБО с аккуратным монтажом и точной
             настройкой
@@ -26,6 +27,16 @@ export function Hero() {
             проверку безопасности перед выдачей. После установки обеспечиваем
             сервисное сопровождение.
           </p>
+          <div className="hero-proof">
+            <div className="hero-proof__item">
+              <Star size={18} />
+              <span>4,8 на Яндекс Картах</span>
+            </div>
+            <div className="hero-proof__item">
+              <strong>1000+</strong>
+              <span>довольных клиентов и установок</span>
+            </div>
+          </div>
           <div className="hero-actions">
             <a className="button button--primary" href="/contacts">
               Рассчитать установку

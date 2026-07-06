@@ -260,6 +260,27 @@
     align-items: flex-start;
   }
 
+  .hero-brand-kicker {
+    align-items: flex-start;
+    border-radius: 8px;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .hero-brand-kicker strong {
+    padding: 0 4px;
+  }
+
+  .hero-proof {
+    gap: 8px;
+  }
+
+  .hero-proof__item {
+    min-height: 38px;
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
   .stats-row {
     margin-top: 20px;
     gap: 6px;
