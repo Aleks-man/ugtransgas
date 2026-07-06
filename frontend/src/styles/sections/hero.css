@@ -122,6 +122,10 @@ h3 {
   font-size: 18px;
 }
 
+.hero-section .hero-copy p {
+  color: var(--text-muted-on-dark);
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;

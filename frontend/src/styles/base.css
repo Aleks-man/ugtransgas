@@ -23,7 +23,8 @@
   --surface-deep: #d3c49f;
   --line: #c7b98f;
   --text: #34322e;
-  --text-muted: #5f594c;
+  --text-muted: #514b40;
+  --text-muted-on-dark: rgba(255, 253, 243, 0.86);
   --muted: var(--text-muted);
   --shadow: 0 24px 70px rgba(22, 22, 21, 0.16);
   --section-y: 68px;
