@@ -20,14 +20,14 @@ export const contactInfo = {
   phone: "+7 978 890 76 80",
   phoneHref: "tel:+79788907680",
   email: "sto.transgaz@mail.ru",
-  address: "Республика Крым, Симферопольский район, село Чистенькое, Севастопольское шоссе, зд. 667",
+  address:
+    "Республика Крым, Симферопольский район, село Чистенькое, Севастопольское шоссе, зд. 667",
   fullAddress:
     "297570, Республика Крым, Симферопольский район, с. Чистенькое, Севастопольское шоссе, зд. 667, территория метановой заправки АГНКС «Черноморнефтегаз»",
   schedule: "ПН-СБ: 09:00-13:00, 14:00-18:00",
   whatsapp: "https://api.whatsapp.com/send?phone=+79788907680",
   telegram: "http://t.me/+79788907680",
-  route:
-    "https://yandex.ru/maps/?ll=34.050033%2C44.888887&mode=routes&rtext=~44.889457%2C34.048128&rtt=auto&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D1060228721&utm_source=share&z=18.39",
+  route: "https://yandex.ru/maps/-/CTq1jHOL",
 };
 
 export const stats = [
