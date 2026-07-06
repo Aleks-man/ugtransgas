@@ -3,7 +3,7 @@
   z-index: 1;
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  gap: 58px;
+  gap: 15px;
 }
 
 .process-section {
@@ -60,5 +60,3 @@
   font-size: 18px;
   font-weight: 800;
 }
-
-
