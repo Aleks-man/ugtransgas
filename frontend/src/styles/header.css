@@ -203,8 +203,9 @@
   font-weight: 800;
   text-align: center;
   transition:
-    background 180ms ease,
-    color 180ms ease;
+    background 260ms ease,
+    color 260ms ease,
+    transform 220ms ease;
 }
 
 .mobile-bottom-nav__link:hover {
