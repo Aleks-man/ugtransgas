@@ -8,14 +8,18 @@ export const routes = {
 } as const;
 
 export function navigateTo(path: string) {
-  if (window.location.pathname === path) {
+  const currentPath = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+
+  if (currentPath === path) {
     window.scrollTo({ top: 0, behavior: "smooth" });
     return;
   }
 
   window.history.pushState({}, "", path);
   window.dispatchEvent(new PopStateEvent("popstate"));
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.requestAnimationFrame(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 }
 
 export function getCurrentPath() {
