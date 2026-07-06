@@ -236,6 +236,10 @@
     padding-top: 28px;
   }
 
+  #services {
+    padding-top: 38px;
+  }
+
   h1 {
     font-size: 34px;
     line-height: 1.08;
@@ -261,14 +265,19 @@
   }
 
   .hero-brand-kicker {
-    align-items: flex-start;
-    border-radius: 8px;
-    flex-direction: column;
-    gap: 7px;
+    gap: 6px;
+    padding: 5px 7px 5px 5px;
+  }
+
+  .hero-brand-kicker span {
+    min-height: 24px;
+    padding: 0 7px;
+    font-size: 10px;
   }
 
   .hero-brand-kicker strong {
-    padding: 0 4px;
+    font-size: 11px;
+    white-space: nowrap;
   }
 
   .hero-proof {
