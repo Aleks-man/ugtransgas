@@ -91,7 +91,7 @@ export function Header({ currentPath }: HeaderProps) {
         <div className="container header__inner">
           <div className="header__brand">
             <AppLink className="header__logo-link" to="/" aria-label="СТО ТрансГаз">
-              <Logo />
+              <Logo mobileMark />
             </AppLink>
             <span className="header__descriptor">Лицензированный сервисный центр по установке ГБО</span>
           </div>
