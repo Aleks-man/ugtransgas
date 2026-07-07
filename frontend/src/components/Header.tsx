@@ -19,13 +19,16 @@ export function Header({ currentPath }: HeaderProps) {
     function getIndicatorStyle(navElement: HTMLElement | null) {
       const activeLink = navElement?.querySelector<HTMLElement>('[aria-current="page"]');
 
-      if (!activeLink) {
+      if (!navElement || !activeLink) {
         return { width: 0, x: 0 };
       }
 
+      const navRect = navElement.getBoundingClientRect();
+      const activeRect = activeLink.getBoundingClientRect();
+
       return {
-        width: activeLink.offsetWidth,
-        x: activeLink.offsetLeft,
+        width: activeRect.width,
+        x: activeRect.left - navRect.left,
       };
     }
 
@@ -58,9 +61,12 @@ export function Header({ currentPath }: HeaderProps) {
         return;
       }
 
+      const navRect = mobileNavElement.getBoundingClientRect();
+      const activeRect = activeLink.getBoundingClientRect();
+
       setMobileIndicatorStyle({
-        width: activeLink.offsetWidth,
-        x: activeLink.offsetLeft,
+        width: activeRect.width,
+        x: activeRect.left - navRect.left,
       });
     });
 

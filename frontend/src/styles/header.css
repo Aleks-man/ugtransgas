@@ -193,7 +193,7 @@
   position: absolute;
   top: 6px;
   bottom: 6px;
-  left: 6px;
+  left: 0;
   z-index: 0;
   border-radius: 999px;
   background: var(--brand-yellow);
