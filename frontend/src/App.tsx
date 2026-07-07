@@ -86,16 +86,16 @@ function App() {
       <Header currentPath={currentPath} />
       <main>{page}</main>
       <Footer />
-      {showScrollTop ? (
-        <button
-          className="scroll-top-button"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          type="button"
-          aria-label="Наверх"
-        >
-          <ChevronUp size={18} />
-        </button>
-      ) : null}
+      <button
+        className={showScrollTop ? "scroll-top-button is-visible" : "scroll-top-button"}
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        type="button"
+        aria-label="Наверх"
+        aria-hidden={!showScrollTop}
+        tabIndex={showScrollTop ? 0 : -1}
+      >
+        <ChevronUp size={18} />
+      </button>
     </>
   );
 }
