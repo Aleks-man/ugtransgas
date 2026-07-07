@@ -189,7 +189,25 @@
   backdrop-filter: blur(18px);
 }
 
+.mobile-bottom-nav__indicator {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 6px;
+  z-index: 0;
+  border-radius: 999px;
+  background: var(--brand-yellow);
+  box-shadow: 0 10px 26px rgba(255, 242, 0, 0.18);
+  transition:
+    width 260ms ease,
+    opacity 180ms ease,
+    transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
 .mobile-bottom-nav__link {
+  position: relative;
+  z-index: 1;
   display: inline-flex;
   min-width: 0;
   flex: 1 1 0;
@@ -203,7 +221,6 @@
   font-weight: 800;
   text-align: center;
   transition:
-    background 260ms ease,
     color 260ms ease,
     transform 220ms ease;
 }
@@ -213,7 +230,6 @@
 }
 
 .mobile-bottom-nav__link[aria-current="page"] {
-  background: var(--brand-yellow);
   color: var(--ink-950);
 }
 

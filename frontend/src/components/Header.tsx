@@ -10,27 +10,62 @@ type HeaderProps = {
 
 export function Header({ currentPath }: HeaderProps) {
   const navRef = useRef<HTMLElement | null>(null);
+  const mobileNavRef = useRef<HTMLElement | null>(null);
   const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, x: 0 });
+  const [mobileIndicatorStyle, setMobileIndicatorStyle] = useState({ width: 0, x: 0 });
   const [isScrolled, setIsScrolled] = useState(false);
 
   useLayoutEffect(() => {
-    function updateIndicator() {
-      const activeLink = navRef.current?.querySelector<HTMLElement>('[aria-current="page"]');
+    function getIndicatorStyle(navElement: HTMLElement | null) {
+      const activeLink = navElement?.querySelector<HTMLElement>('[aria-current="page"]');
 
       if (!activeLink) {
-        setIndicatorStyle({ width: 0, x: 0 });
+        return { width: 0, x: 0 };
+      }
+
+      return {
+        width: activeLink.offsetWidth,
+        x: activeLink.offsetLeft,
+      };
+    }
+
+    function updateIndicators() {
+      setIndicatorStyle(getIndicatorStyle(navRef.current));
+      setMobileIndicatorStyle(getIndicatorStyle(mobileNavRef.current));
+    }
+
+    updateIndicators();
+    window.addEventListener("resize", updateIndicators);
+    return () => window.removeEventListener("resize", updateIndicators);
+  }, [currentPath]);
+
+  useLayoutEffect(() => {
+    if (!("ResizeObserver" in window)) {
+      return;
+    }
+
+    const mobileNavElement = mobileNavRef.current;
+
+    if (!mobileNavElement) {
+      return;
+    }
+
+    const resizeObserver = new ResizeObserver(() => {
+      const activeLink = mobileNavElement.querySelector<HTMLElement>('[aria-current="page"]');
+
+      if (!activeLink) {
+        setMobileIndicatorStyle({ width: 0, x: 0 });
         return;
       }
 
-      setIndicatorStyle({
+      setMobileIndicatorStyle({
         width: activeLink.offsetWidth,
         x: activeLink.offsetLeft,
       });
-    }
+    });
 
-    updateIndicator();
-    window.addEventListener("resize", updateIndicator);
-    return () => window.removeEventListener("resize", updateIndicator);
+    resizeObserver.observe(mobileNavElement);
+    return () => resizeObserver.disconnect();
   }, [currentPath]);
 
   useEffect(() => {
@@ -87,7 +122,15 @@ export function Header({ currentPath }: HeaderProps) {
         </div>
       </header>
 
-      <nav className="mobile-bottom-nav" aria-label="Мобильная навигация">
+      <nav className="mobile-bottom-nav" ref={mobileNavRef} aria-label="Мобильная навигация">
+        <span
+          className="mobile-bottom-nav__indicator"
+          style={{
+            opacity: mobileIndicatorStyle.width ? 1 : 0,
+            transform: `translateX(${mobileIndicatorStyle.x}px)`,
+            width: `${mobileIndicatorStyle.width}px`,
+          }}
+        />
         {navItems.map((item) => {
           const isActive = currentPath === item.href;
 
