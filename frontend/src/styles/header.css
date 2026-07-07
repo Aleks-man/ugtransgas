@@ -230,6 +230,8 @@
   left: 14px;
   z-index: 30;
   display: none;
+  width: min(calc(100% - 28px), 530px);
+  margin-inline: auto;
   align-items: center;
   justify-content: center;
   gap: 4px;
