@@ -189,24 +189,25 @@
 
   .logo__text--fallback {
     position: static;
-    width: 0;
+    width: 150px;
     height: auto;
-    max-width: 0;
+    max-width: 150px;
     overflow: visible;
     clip: auto;
     opacity: 0;
     white-space: nowrap;
-    transform: translateX(-6px);
+    transform: translateY(8px);
     transition:
-      max-width 220ms ease,
       opacity 180ms ease,
       transform 220ms ease;
   }
 
   .logo__text strong {
     color: var(--brand-yellow);
-    font-size: 16px;
+    font-size: 17px;
+    font-weight: 950;
     line-height: 1;
+    text-shadow: 0 8px 22px rgba(255, 242, 0, 0.12);
   }
 
   .logo__text span {
@@ -226,10 +227,8 @@
   }
 
   .site-header.is-scrolled .logo__text--fallback {
-    width: auto;
-    max-width: 150px;
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 
   .hero-section {
