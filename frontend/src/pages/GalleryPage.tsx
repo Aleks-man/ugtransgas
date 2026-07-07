@@ -1,5 +1,5 @@
 import { ChevronDown, ChevronLeft, ChevronRight, X } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { SectionHeader } from "../components/SectionHeader";
 
 type WorkImage = {
@@ -16,6 +16,7 @@ function getRequestedBrandSlug() {
 }
 
 export function GalleryPage() {
+  const brandSelectRef = useRef<HTMLDivElement | null>(null);
   const [images, setImages] = useState<WorkImage[]>([]);
   const [activeSlug, setActiveSlug] = useState<string>("");
   const [visibleCount, setVisibleCount] = useState(pageSize);
@@ -52,6 +53,21 @@ export function GalleryPage() {
 
   const visibleImages = activeImages.slice(0, visibleCount);
   const activeLightboxImage = activeImageIndex === null ? null : activeImages[activeImageIndex];
+
+  useEffect(() => {
+    if (!isBrandMenuOpen) {
+      return;
+    }
+
+    function handleDocumentPointerDown(event: PointerEvent) {
+      if (!brandSelectRef.current?.contains(event.target as Node)) {
+        setIsBrandMenuOpen(false);
+      }
+    }
+
+    document.addEventListener("pointerdown", handleDocumentPointerDown);
+    return () => document.removeEventListener("pointerdown", handleDocumentPointerDown);
+  }, [isBrandMenuOpen]);
 
   useEffect(() => {
     if (activeImageIndex === null) {
@@ -169,7 +185,7 @@ export function GalleryPage() {
             </div>
           ) : (
             <div className="gallery-layout">
-              <div className="gallery-brand-select">
+              <div className="gallery-brand-select" ref={brandSelectRef}>
                 <span>Выбрать авто</span>
                 <button
                   className="gallery-brand-select__trigger"

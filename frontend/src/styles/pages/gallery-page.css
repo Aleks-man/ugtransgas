@@ -171,6 +171,27 @@
   transform: scale(1.035);
 }
 
+@media (max-width: 1400px) and (min-width: 761px) {
+  .gallery-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-brand-select {
+    display: grid;
+    gap: 8px;
+    width: min(50%, 420px);
+    min-width: 320px;
+  }
+
+  .gallery-brand-list {
+    display: none;
+  }
+
+  .gallery-brand-select__menu {
+    max-height: min(360px, 52vh);
+  }
+}
+
 .gallery-more {
   justify-self: center;
   margin-top: 8px;

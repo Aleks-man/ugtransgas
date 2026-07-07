@@ -360,6 +360,8 @@
   .gallery-brand-select {
     display: grid;
     gap: 8px;
+    width: min(100%, 420px);
+    min-width: 0;
   }
 
   .gallery-brand-list {
@@ -520,5 +522,11 @@
 
   .license-lightbox__stage img {
     max-height: 82vh;
+  }
+}
+
+@media (max-width: 660px) {
+  .gallery-brand-select {
+    width: 100%;
   }
 }
