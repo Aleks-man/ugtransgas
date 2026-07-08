@@ -148,7 +148,7 @@
   }
 
   .header__inner {
-    min-height: 76px;
+    min-height: 58px;
     gap: 12px;
   }
 
@@ -194,9 +194,9 @@
   }
 
   .site-header .logo__mark {
-    width: 48px;
+    width: 50px;
     height: 42px;
-    flex-basis: 48px;
+    flex-basis: 50px;
     overflow: hidden;
   }
 
@@ -251,13 +251,13 @@
   }
 
   .site-header.is-scrolled .logo {
-    gap: 9px;
+    gap: 10px;
   }
 
   .site-header.is-scrolled .logo__mark {
-    width: 42px;
-    height: 36px;
-    flex-basis: 42px;
+    width: 50px;
+    height: 42px;
+    flex-basis: 50px;
     opacity: 1;
     transform: translateY(0);
   }
