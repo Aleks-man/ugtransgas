@@ -32,8 +32,8 @@ export const contactInfo = {
 
 export const stats = [
   { value: "12+", label: "лет опыта" },
-  { value: "1000+", label: "установок ГБО" },
-  { value: "до 2 лет", label: "гарантия " },
+  { value: "1000+", label: "установок" },
+  { value: "2 года", label: "гарантии" },
 ];
 
 export const services = [

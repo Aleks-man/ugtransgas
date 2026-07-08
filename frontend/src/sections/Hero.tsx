@@ -1,7 +1,9 @@
-import { ArrowRight, CheckCircle2, Star } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock3, ShieldCheck, Star, Wrench } from "lucide-react";
 import { motion } from "framer-motion";
 import heroImage from "../assets/hero-workshop-brand.jpg";
 import { stats } from "../data/site";
+
+const statIcons = [Clock3, Wrench, ShieldCheck];
 
 export function Hero() {
   return (
@@ -72,12 +74,21 @@ export function Hero() {
       </div>
 
       <div className="container stats-row">
-        {stats.map((item) => (
-          <div className="stat" key={item.label}>
-            <strong>{item.value}</strong>
-            <span>{item.label}</span>
-          </div>
-        ))}
+        {stats.map((item, index) => {
+          const Icon = statIcons[index] ?? CheckCircle2;
+
+          return (
+            <div className="stat" key={item.label}>
+              <span className="stat__icon" aria-hidden="true">
+                <Icon size={20} />
+              </span>
+              <span className="stat__content">
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
+              </span>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

@@ -79,6 +79,48 @@
   .brands-actions {
     justify-content: flex-start;
   }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(8px, 1.4vw, 14px);
+    width: min(100%, 780px);
+    margin-top: 24px;
+  }
+
+  .stat {
+    display: grid;
+    gap: 4px;
+    min-height: clamp(74px, 9vw, 104px);
+    align-content: center;
+    justify-items: center;
+    padding: clamp(10px, 1.8vw, 18px);
+    border: 1px solid var(--line);
+    background: rgba(248, 240, 216, 0.82);
+    text-align: center;
+  }
+
+  .stat + .stat::before {
+    display: none;
+  }
+
+  .stat__icon {
+    display: none;
+  }
+
+  .stat__content {
+    gap: 4px;
+  }
+
+  .stat strong {
+    color: var(--ink-950);
+    font-size: clamp(20px, 3.2vw, 29px);
+  }
+
+  .stat__content > span {
+    color: var(--text-muted);
+    font-size: clamp(11px, 1.5vw, 15px);
+  }
 }
 
 @media (max-width: 880px) {
