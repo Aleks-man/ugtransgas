@@ -4,6 +4,7 @@
 
 .price-card {
   display: grid;
+  grid-template-rows: auto 1fr auto;
   gap: 22px;
   padding: 24px;
   border: 1px solid var(--line);
@@ -37,6 +38,7 @@
 
 .price-card ul {
   display: grid;
+  align-content: start;
   gap: 12px;
   margin: 0;
   padding: 0;
@@ -52,7 +54,11 @@
 
 .price-card li svg {
   flex: 0 0 auto;
-  color: var(--brand-yellow);
+  color: var(--brand-red);
 }
 
+.price-card .button {
+  align-self: end;
+  min-height: 48px;
+}
 

@@ -1,3 +1,10 @@
+@media (max-width: 1250px) {
+  .services-grid,
+  .service-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 1040px) {
   .header__nav {
     display: none;
@@ -619,6 +626,14 @@
 
   .license-lightbox__stage img {
     max-height: 82vh;
+  }
+}
+
+@media (min-width: 552px) and (max-width: 760px) {
+  .service-detail-card {
+    min-height: 0;
+    gap: 14px;
+    padding: 20px;
   }
 }
 
