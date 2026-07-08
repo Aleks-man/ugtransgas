@@ -4,6 +4,7 @@ import {
   Clock3,
   ShieldCheck,
   Star,
+  ThumbsUp,
   Wrench,
 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -39,6 +40,7 @@ export function Hero() {
               <span>4,8 на Яндекс Картах</span>
             </div>
             <div className="hero-proof__item">
+              <ThumbsUp size={18} />
               <strong>1000+</strong>
               <span>довольных клиентов и установок</span>
             </div>
