@@ -28,14 +28,18 @@ function InstagramIcon() {
 
 export function Contacts() {
   return (
-    <section className="section contacts-section section--soft-divider" id="contacts">
+    <section
+      className="section contacts-section section--soft-divider"
+      id="contacts"
+    >
       <div className="container contacts-grid">
         <div className="contact-copy">
           <span className="eyebrow">Заявка</span>
           <h2>Запишитесь на бесплатный технический осмотр</h2>
           <p>
-            Специалист проверит автомобиль, подскажет подходящий комплект и рассчитает стоимость установки метанового
-            или пропанового оборудования.
+            Специалист проведет осмотр автомобиля, подберет оптимальную систему
+            и рассчитает стоимость установки с учетом особенностей вашего
+            автомобиля.
           </p>
           <div className="contact-list">
             <a href={contactInfo.phoneHref}>
@@ -59,13 +63,29 @@ export function Contacts() {
           <div className="messenger-block">
             <span>Мессенджеры и соцсети</span>
             <div className="social-actions">
-              <a className="social-link" href={contactInfo.telegram} target="_blank" rel="noreferrer" aria-label="Telegram">
+              <a
+                className="social-link"
+                href={contactInfo.telegram}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Telegram"
+              >
                 <TelegramIcon />
               </a>
-              <a className="social-link" href={contactInfo.whatsapp} target="_blank" rel="noreferrer" aria-label="WhatsApp">
+              <a
+                className="social-link"
+                href={contactInfo.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="WhatsApp"
+              >
                 <WhatsappIcon />
               </a>
-              <span className="social-link social-link--inactive" aria-label="Instagram" title="Instagram">
+              <span
+                className="social-link social-link--inactive"
+                aria-label="Instagram"
+                title="Instagram"
+              >
                 <InstagramIcon />
               </span>
             </div>

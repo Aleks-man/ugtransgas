@@ -8,13 +8,15 @@ export function Pricing() {
       <div className="container">
         <SectionHeader
           eyebrow="Пакеты"
-          title="Комплекты ГБО под разные задачи и бюджет"
-          text="Стоимость зависит от автомобиля, типа баллона и выбранных компонентов. Точный расчет выполняется после технического осмотра."
+          title="Подберем комплект ГБО под ваш автомобиль"
+          text="Стоимость рассчитывается индивидуально с учетом модели автомобиля, типа баллона и выбранного комплекта оборудования. Точную стоимость мы определяем после технического осмотра."
         />
         <div className="pricing-grid">
           {packages.map((item) => (
             <article
-              className={item.featured ? "price-card price-card--featured" : "price-card"}
+              className={
+                item.featured ? "price-card price-card--featured" : "price-card"
+              }
               key={item.name}
             >
               <div>

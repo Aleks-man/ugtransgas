@@ -1,4 +1,11 @@
-import { ArrowRight, CheckCircle2, Clock3, ShieldCheck, Star, Wrench } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Clock3,
+  ShieldCheck,
+  Star,
+  Wrench,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import heroImage from "../assets/hero-workshop-brand.jpg";
 import { stats } from "../data/site";
@@ -19,15 +26,12 @@ export function Hero() {
             <span>СТО «ТрансГаз»</span>
             <strong>Установка ГБО в Крыму</strong>
           </div>
-          <h1>
-            Профессиональная установка ГБО с аккуратным монтажом и точной
-            настройкой
-          </h1>
+          <h1>Установка ГБО с аккуратным монтажом и точной настройкой</h1>
           <p>
-            Подбираем оптимальную систему под ваш автомобиль, выполняем чистый
-            монтаж без нарушения штатной компоновки, проводим настройку и
-            проверку безопасности перед выдачей. После установки обеспечиваем
-            сервисное сопровождение.
+            Подбираем оборудование с учетом особенностей автомобиля, выполняем
+            аккуратный монтаж, настраиваем систему и проверяем ее работу перед
+            выдачей. После установки консультируем по эксплуатации и дальнейшему
+            обслуживанию.
           </p>
           <div className="hero-proof">
             <div className="hero-proof__item">

@@ -147,8 +147,9 @@ export function GalleryPage() {
             <span className="eyebrow">Работы</span>
             <h1>Галерея установок по маркам автомобилей</h1>
             <p>
-              Выберите марку и посмотрите реальные примеры монтажа: подкапотное пространство,
-              баллоны, заправочные узлы и готовую компоновку оборудования.
+              Выберите марку автомобиля и посмотрите реальные примеры установки
+              ГБО на разных моделях: подкапотное размещение оборудования,
+              баллоны, заправочные узлы и готовый результат..
             </p>
           </div>
           <div className="page-hero__panel">
@@ -164,11 +165,14 @@ export function GalleryPage() {
           <SectionHeader
             eyebrow="Марки"
             title="Выберите автомобиль"
-            text="В галерее собраны реальные установки на легковых и коммерческих автомобилях: от размещения баллона до аккуратной компоновки под капотом."
+            text="В галерее представлены реальные работы по установке ГБО на легковые и коммерческие автомобили. Вы увидите примеры аккуратного монтажа, размещения оборудования и готового результата."
           />
 
           {isLoading ? (
-            <div className="gallery-layout gallery-loading" aria-label="Загрузка галереи">
+            <div
+              className="gallery-layout gallery-loading"
+              aria-label="Загрузка галереи"
+            >
               <aside className="gallery-brand-list" aria-hidden="true">
                 {Array.from({ length: 10 }).map((_, index) => (
                   <span className="gallery-loading__brand" key={index} />
@@ -193,7 +197,8 @@ export function GalleryPage() {
                   type="button"
                   aria-expanded={isBrandMenuOpen}
                 >
-                  {brands.find((brand) => brand.slug === activeSlug)?.brand ?? "Марка авто"}
+                  {brands.find((brand) => brand.slug === activeSlug)?.brand ??
+                    "Марка авто"}
                   <ChevronDown size={18} />
                 </button>
 
@@ -219,7 +224,10 @@ export function GalleryPage() {
 
               <label className="gallery-brand-select-native">
                 <span>Выбрать авто</span>
-                <select value={activeSlug} onChange={(event) => selectBrand(event.target.value)}>
+                <select
+                  value={activeSlug}
+                  onChange={(event) => selectBrand(event.target.value)}
+                >
                   {brands.map((brand) => (
                     <option value={brand.slug} key={brand.slug}>
                       {brand.brand}
@@ -228,10 +236,17 @@ export function GalleryPage() {
                 </select>
               </label>
 
-              <aside className="gallery-brand-list" aria-label="Марки автомобилей">
+              <aside
+                className="gallery-brand-list"
+                aria-label="Марки автомобилей"
+              >
                 {brands.map((brand) => (
                   <button
-                    className={activeSlug === brand.slug ? "gallery-brand is-active" : "gallery-brand"}
+                    className={
+                      activeSlug === brand.slug
+                        ? "gallery-brand is-active"
+                        : "gallery-brand"
+                    }
                     key={brand.slug}
                     onClick={() => selectBrand(brand.slug)}
                     type="button"
@@ -241,42 +256,60 @@ export function GalleryPage() {
                 ))}
               </aside>
 
-            <div className="gallery-results">
-              <div className="gallery-results__head">
-                <h2>{brands.find((brand) => brand.slug === activeSlug)?.brand ?? "Работы"}</h2>
-                <span>{activeImages.length} фото</span>
-              </div>
+              <div className="gallery-results">
+                <div className="gallery-results__head">
+                  <h2>
+                    {brands.find((brand) => brand.slug === activeSlug)?.brand ??
+                      "Работы"}
+                  </h2>
+                  <span>{activeImages.length} фото</span>
+                </div>
 
-              <div className="gallery-grid">
-                {visibleImages.map((image) => (
+                <div className="gallery-grid">
+                  {visibleImages.map((image) => (
+                    <button
+                      className="gallery-image-button"
+                      key={image.src}
+                      onClick={() =>
+                        setActiveImageIndex(
+                          activeImages.findIndex(
+                            (item) => item.src === image.src,
+                          ),
+                        )
+                      }
+                      type="button"
+                    >
+                      <img
+                        src={image.src}
+                        alt={`Работа СТО ТрансГаз: ${image.brand}`}
+                        loading="lazy"
+                      />
+                    </button>
+                  ))}
+                </div>
+
+                {visibleCount < activeImages.length ? (
                   <button
-                    className="gallery-image-button"
-                    key={image.src}
-                    onClick={() => setActiveImageIndex(activeImages.findIndex((item) => item.src === image.src))}
+                    className="button button--primary gallery-more"
+                    onClick={() => setVisibleCount((count) => count + pageSize)}
                     type="button"
                   >
-                    <img src={image.src} alt={`Работа СТО ТрансГаз: ${image.brand}`} loading="lazy" />
+                    Показать еще
                   </button>
-                ))}
+                ) : null}
               </div>
-
-              {visibleCount < activeImages.length ? (
-                <button
-                  className="button button--primary gallery-more"
-                  onClick={() => setVisibleCount((count) => count + pageSize)}
-                  type="button"
-                >
-                  Показать еще
-                </button>
-              ) : null}
-            </div>
             </div>
           )}
         </div>
       </section>
 
       {activeLightboxImage ? (
-        <div className="gallery-lightbox" onClick={() => setActiveImageIndex(null)} role="dialog" aria-modal="true">
+        <div
+          className="gallery-lightbox"
+          onClick={() => setActiveImageIndex(null)}
+          role="dialog"
+          aria-modal="true"
+        >
           <button
             className="gallery-lightbox__button gallery-lightbox__close"
             onClick={() => setActiveImageIndex(null)}
@@ -296,7 +329,10 @@ export function GalleryPage() {
           >
             <ChevronLeft size={34} />
           </button>
-          <div className="gallery-lightbox__stage" onClick={(event) => event.stopPropagation()}>
+          <div
+            className="gallery-lightbox__stage"
+            onClick={(event) => event.stopPropagation()}
+          >
             <button
               className="gallery-lightbox__button gallery-lightbox__close"
               onClick={() => setActiveImageIndex(null)}
@@ -306,8 +342,11 @@ export function GalleryPage() {
               <X size={28} />
             </button>
             <figure className="gallery-lightbox__figure">
-            <img src={activeLightboxImage.src} alt={`Работа СТО ТрансГаз: ${activeLightboxImage.brand}`} />
-            <figcaption>{activeLightboxImage.brand}</figcaption>
+              <img
+                src={activeLightboxImage.src}
+                alt={`Работа СТО ТрансГаз: ${activeLightboxImage.brand}`}
+              />
+              <figcaption>{activeLightboxImage.brand}</figcaption>
             </figure>
           </div>
           <button

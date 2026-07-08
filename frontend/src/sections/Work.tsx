@@ -47,8 +47,8 @@ export function Work() {
       <div className="container">
         <SectionHeader
           eyebrow="Работы"
-          title="Реальные установки: подкапотное пространство, баллоны и готовая компоновка"
-          text="Показываем монтажные решения на разных автомобилях: аккуратное размещение оборудования, доступ к узлам и чистый результат после выдачи."
+          title="Каждая установка — внимание к деталям и аккуратное исполнение"
+          text="В галерее представлены реальные примеры наших работ: размещение оборудования под капотом, установка баллонов и готовый результат на разных автомобилях."
         />
         <div className="work-meta">
           <span>1000+ установок ГБО</span>
@@ -86,7 +86,10 @@ export function Work() {
             <AppLink className="button button--primary" to="/works">
               Смотреть галерею
             </AppLink>
-            <AppLink className="button button--ghost button--dark" to="/contacts">
+            <AppLink
+              className="button button--ghost button--dark"
+              to="/contacts"
+            >
               Запросить примеры
             </AppLink>
           </div>
