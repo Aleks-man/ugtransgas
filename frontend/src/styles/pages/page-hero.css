@@ -81,7 +81,7 @@
   border: 1px solid rgba(255, 242, 0, 0.18);
   border-radius: 8px;
   background: rgba(255, 253, 243, 0.08);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(2px);
 }
 
 .page-hero__panel span,
@@ -116,5 +116,3 @@
 .contact-quick-list a:hover {
   color: var(--brand-yellow);
 }
-
-
