@@ -1,4 +1,5 @@
 .estimate-section {
+  position: relative;
   padding: var(--section-y-compact) 0 var(--section-y);
   background: #161615;
 }

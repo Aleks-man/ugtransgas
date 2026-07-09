@@ -1,4 +1,5 @@
 .reviews-section {
+  position: relative;
   padding: var(--section-y) 0;
   background: var(--page-bg);
 }
