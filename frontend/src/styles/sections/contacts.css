@@ -2,7 +2,7 @@
   background:
     linear-gradient(180deg, rgba(235, 224, 196, 0.84) 0%, rgba(235, 224, 196, 0.56) 24%, rgba(248, 240, 216, 0.54) 76%, rgba(248, 240, 216, 0.86) 100%),
     linear-gradient(90deg, rgba(248, 240, 216, 0.66), rgba(248, 240, 216, 0.42)),
-    url("../../assets/section-equipment-detail.jpg") center / cover;
+    url("../../assets/section-contact-request-bg.jpg") center / cover;
 }
 
 .contacts-grid {
