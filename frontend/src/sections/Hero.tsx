@@ -1,17 +1,11 @@
 import {
   ArrowRight,
   CheckCircle2,
-  Clock3,
-  ShieldCheck,
   Star,
   ThumbsUp,
-  Wrench,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import heroImage from "../assets/hero-workshop-brand.jpg";
-import { stats } from "../data/site";
-
-const statIcons = [Clock3, Wrench, ShieldCheck];
 
 export function Hero() {
   return (
@@ -37,13 +31,24 @@ export function Hero() {
           <div className="hero-proof">
             <div className="hero-proof__item">
               <Star size={18} />
-              <span>4,8 на Яндекс Картах</span>
+              <strong>4,8</strong>
+              <span>на Яндекс Картах</span>
             </div>
             <div className="hero-proof__item">
               <ThumbsUp size={18} />
               <strong>1000+</strong>
               <span>довольных клиентов и установок</span>
             </div>
+          </div>
+          <div className="hero-metrics" aria-label="Опыт и гарантии">
+            <span className="hero-metric">
+              <strong>12+</strong>
+              <span>лет опыта</span>
+            </span>
+            <span className="hero-metric">
+              <strong>2 года</strong>
+              <span>гарантии</span>
+            </span>
           </div>
           <div className="hero-actions">
             <a className="button button--primary" href="/contacts">
@@ -77,24 +82,6 @@ export function Hero() {
             </span>
           </div>
         </motion.div>
-      </div>
-
-      <div className="container stats-row">
-        {stats.map((item, index) => {
-          const Icon = statIcons[index] ?? CheckCircle2;
-
-          return (
-            <div className="stat" key={item.label}>
-              <span className="stat__icon" aria-hidden="true">
-                <Icon size={20} />
-              </span>
-              <span className="stat__content">
-                <strong>{item.value}</strong>
-                <span>{item.label}</span>
-              </span>
-            </div>
-          );
-        })}
       </div>
     </section>
   );
