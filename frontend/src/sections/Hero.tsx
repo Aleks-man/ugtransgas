@@ -1,5 +1,6 @@
 import {
   ArrowRight,
+  Award,
   CheckCircle2,
   Star,
   ThumbsUp,
@@ -39,16 +40,11 @@ export function Hero() {
               <strong>1000+</strong>
               <span>довольных клиентов и установок</span>
             </div>
-          </div>
-          <div className="hero-metrics" aria-label="Опыт и гарантии">
-            <span className="hero-metric">
+            <div className="hero-proof__item">
+              <Award size={18} />
               <strong>12+</strong>
               <span>лет опыта</span>
-            </span>
-            <span className="hero-metric">
-              <strong>2 года</strong>
-              <span>гарантии</span>
-            </span>
+            </div>
           </div>
           <div className="hero-actions">
             <a className="button button--primary" href="/contacts">
