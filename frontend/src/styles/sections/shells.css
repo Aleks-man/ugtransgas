@@ -4,8 +4,8 @@
   padding: var(--section-y) 0;
 }
 
-:where(#services, .section, .brands-section, .reviews-section, .estimate-section)::before,
-:where(#services, .section, .brands-section, .reviews-section, .estimate-section)::after {
+:where(#services, .section, .brands-section, .reviews-section)::before,
+:where(#services, .section, .brands-section, .reviews-section)::after {
   content: "";
   position: absolute;
   z-index: 1;
@@ -15,12 +15,12 @@
   pointer-events: none;
 }
 
-:where(#services, .section, .brands-section, .reviews-section, .estimate-section)::before {
+:where(#services, .section, .brands-section, .reviews-section)::before {
   top: 0;
   background: linear-gradient(180deg, rgba(222, 211, 184, 0.86), rgba(222, 211, 184, 0));
 }
 
-:where(#services, .section, .brands-section, .reviews-section, .estimate-section)::after {
+:where(#services, .section, .brands-section, .reviews-section)::after {
   bottom: 0;
   background: linear-gradient(180deg, rgba(222, 211, 184, 0), rgba(222, 211, 184, 0.86));
 }
